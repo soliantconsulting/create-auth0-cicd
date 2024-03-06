@@ -9,6 +9,7 @@
     "access": "public"
   },
   "files": [
+    "assets/**/*",
     "dist/**/*",
     "skeleton/**/*"
   ],
