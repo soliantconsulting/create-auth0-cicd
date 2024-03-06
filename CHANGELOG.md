@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.0.1...v1.0.2) (2024-03-06)
+
+
+### Bug Fixes
+
+* add missing end of lefthook check command ([571769b](https://github.com/soliantconsulting/create-auth0-cicd/commit/571769b677fa346b15bfd51885df6ff59ec7280c))
+
 ## [1.0.1](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.0.0...v1.0.1) (2024-03-06)
 
 
