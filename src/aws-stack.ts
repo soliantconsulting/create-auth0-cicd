@@ -60,12 +60,11 @@ class AwsStack extends cdk.Stack {
 }
 
 class Producer implements ICloudAssemblyDirectoryProducer {
-    public constructor(private readonly region: string) {
-    }
+    public constructor(private readonly region: string) {}
 
     public async produce(context: AppProps["context"]): Promise<string> {
         const app = new App({ context });
-        new AwsStack(app, "auth0-cicd", {env: {region: this.region}});
+        new AwsStack(app, "auth0-cicd", { env: { region: this.region } });
         return app.synth().directory;
     }
 }
@@ -91,7 +90,7 @@ export const deployAwsStack = async (region: string): Promise<AwsDeployResult> =
     const cli = AwsCdkCli.fromCloudAssemblyDirectoryProducer(new Producer(region));
     await cli.deploy({ requireApproval: RequireApproval.NEVER });
 
-    const cf = new CloudFormation({region});
+    const cf = new CloudFormation({ region });
     const result = await cf.describeStacks({
         StackName: "auth0-cicd",
     });

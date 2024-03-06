@@ -88,7 +88,7 @@ const grantClient = async (
     await execute(
         stdout,
         "auth0",
-        ["api", "post", "client-grants", "--tenant", tenant, '--data', data],
+        ["api", "post", "client-grants", "--tenant", tenant, "--data", data],
         { stdin: "ignore" },
     );
 };

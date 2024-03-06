@@ -472,11 +472,16 @@ const tasks = new Listr<Context>(
             title: "Setup AWS resources",
             task: async (context): Promise<void> => {
                 const deployResult = await deployAwsStack(context.region);
-                const iam = new IAM({region: context.region});
-                const listAccessKeysResult = await iam.listAccessKeys({UserName: deployResult.auth0UserName});
+                const iam = new IAM({ region: context.region });
+                const listAccessKeysResult = await iam.listAccessKeys({
+                    UserName: deployResult.auth0UserName,
+                });
 
                 for (const accessKey of listAccessKeysResult.AccessKeyMetadata ?? []) {
-                    await iam.deleteAccessKey({UserName: deployResult.auth0UserName, AccessKeyId: accessKey.AccessKeyId});
+                    await iam.deleteAccessKey({
+                        UserName: deployResult.auth0UserName,
+                        AccessKeyId: accessKey.AccessKeyId,
+                    });
                 }
 
                 const createAccessKeyResult = await iam.createAccessKey({
@@ -501,7 +506,7 @@ const tasks = new Listr<Context>(
                     fileURLToPath(new URL("../assets/logo.svg", import.meta.url)),
                 );
 
-                const s3 = new S3({region: context.region});
+                const s3 = new S3({ region: context.region });
                 await s3.putObject({
                     Bucket: deployResult.staticBucketName,
                     Key: "tenant-logo.svg",
