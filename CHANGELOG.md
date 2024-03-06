@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.0.2...v1.0.3) (2024-03-06)
+
+
+### Bug Fixes
+
+* **release:** include assets directory ([0277512](https://github.com/soliantconsulting/create-auth0-cicd/commit/027751238080b469526efa5fcae4fa62b45de7e1))
+
 ## [1.0.2](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.0.1...v1.0.2) (2024-03-06)
 
 
