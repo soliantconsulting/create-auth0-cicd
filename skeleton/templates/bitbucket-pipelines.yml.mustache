@@ -1,0 +1,99 @@
+image: node:20
+
+definitions:
+  caches:
+    pnpm:
+      key:
+        files:
+          - pnpm-lock.yaml
+      path: $BITBUCKET_CLONE_DIR/.pnpm-store
+  steps:
+    - step: &biome
+        name: Biome
+        runs-on:
+          - 'self.hosted'
+          - 'linux'
+        script:
+          - corepack enable
+          - corepack prepare pnpm@latest-8 --activate
+          - pnpm install
+          - pnpm exec biome ci .
+        caches:
+          - pnpm
+    - step: &deploy
+        runs-on:
+          - 'self.hosted'
+          - 'linux'
+        oidc: true
+        caches:
+          - pnpm
+        script:
+          # Configure OIDC
+          - export AWS_REGION={{{region}}}
+          - export AWS_ROLE_ARN={{{deployRoleArn}}}
+          - export AWS_WEB_IDENTITY_TOKEN_FILE=$(pwd)/web-identity-token
+          - echo $BITBUCKET_STEP_OIDC_TOKEN > $(pwd)/web-identity-token
+          # Install terraform
+          - TERRAFORM_VERSION=1.7.4
+          - wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+          - unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+          - rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+          - mv terraform /usr/local/bin
+          # Install dependencies
+          - corepack enable
+          - corepack prepare pnpm@latest-8 --activate
+          - pnpm install -P
+          # Deploy with CDK
+          - pnpm exec cdktf deploy --app "node dist/env-$BITBUCKET_DEPLOYMENT_ENVIRONMENT.js" --auto-approve
+
+pipelines:
+  branches:
+    main:
+      - parallel:
+          steps:
+            - step: *biome
+            - step:
+                name: Build
+                runs-on:
+                  - 'self.hosted'
+                  - 'linux'
+                script:
+                  - corepack enable
+                  - corepack prepare pnpm@latest-8 --activate
+                  - pnpm install
+                  - pnpm build
+                caches:
+                  - pnpm
+                artifacts:
+                  - dist/**
+      - step:
+          <<: *deploy
+          name: Deploy Development
+          deployment: test
+      - step:
+          <<: *deploy
+          name: Deploy Staging
+          deployment: staging
+          trigger: manual
+      - step:
+          <<: *deploy
+          name: Deploy Production
+          deployment: production
+          trigger: manual
+  pull-requests:
+    '**':
+      - parallel:
+          steps:
+            - step: *biome
+            - step:
+                name: Type check
+                runs-on:
+                  - 'self.hosted'
+                  - 'linux'
+                script:
+                  - corepack enable
+                  - corepack prepare pnpm@latest-8 --activate
+                  - pnpm install
+                  - pnpm exec tsc --noEmit
+                caches:
+                  - pnpm

@@ -1,0 +1,111 @@
+import { S3Backend, TerraformStack } from 'cdktf';
+import type { Construct } from 'constructs';
+import { Branding } from './gen/providers/auth0/branding/index.js';
+import { Client } from './gen/providers/auth0/client/index.js';
+import { Connection } from './gen/providers/auth0/connection/index.js';
+import { EmailProvider } from './gen/providers/auth0/email-provider/index.js';
+import { Auth0Provider } from './gen/providers/auth0/provider/index.js';
+import { ResourceServer } from './gen/providers/auth0/resource-server/index.js';
+import { Tenant } from './gen/providers/auth0/tenant/index.js';
+
+type Props = {
+    stateKey: string;
+    friendlyTenantName: string;
+{{#if spa}}
+    {{{spa.propPrefix}}}BaseUrl: string;
+{{/if}}
+    ses?: {
+        accessKeyId: string;
+        secretAccessKey: string;
+        region: string;
+    };
+};
+
+class Auth0Stack extends TerraformStack {
+    public constructor(scope: Construct, id: string, props: Props) {
+        super(scope, id);
+
+        new S3Backend(this, {
+            bucket: "{{{awsDeployResult.stateBucketName}}}",
+            key: props.stateKey,
+            region: "{{{region}}}",
+        });
+
+        new Auth0Provider(this, "Auth0Provider");
+
+        new Tenant(this, "Tenant", {
+            friendlyName: props.friendlyTenantName,
+            pictureUrl: "https://{{{awsDeployResult.staticBucketDomainName}}}/tenant-logo.svg",
+            supportEmail: "{{{tenant.supportEmailAddress}}}",
+            supportUrl: "{{{tenant.supportUrl}}}",
+        });
+
+        new Connection(this, "UsernamePasswordAuthenticationConnection", {
+            name: "Username-Password-Authentication",
+            strategy: "auth0",
+            options: {
+                passwordPolicy: "low",
+                passwordComplexityOptions: {
+                    minLength: 12,
+                },
+                passwordDictionary: {
+                    enable: true,
+                },
+                passwordNoPersonalInfo: {
+                    enable: true,
+                },
+            },
+        });
+
+        new Branding(this, "Branding", {
+            logoUrl: "https://{{{awsDeployResult.staticBucketDomainName}}}/branding-logo.svg",
+            colors: {
+                primary: "#635dff",
+                pageBackground: "#000000",
+            },
+        });
+
+{{#if api}}
+        new ResourceServer(this, "{{{api.resourceName}}}", {
+            identifier: "{{{api.identifier}}}",
+            name: "{{{api.name}}}",
+            skipConsentForVerifiableFirstPartyClients: true,
+        });
+
+{{/if}}
+{{#if spa}}
+        new Client(this, "{{{spa.resourceName}}}", {
+            name: "{{{spa.name}}}",
+            appType: "spa",
+            isFirstParty: true,
+            oidcConformant: true,
+            logoUri: "https://{{{awsDeployResult.staticBucketDomainName}}}/{{{spa.identifier}}}-logo.svg",
+            refreshToken: {
+                rotationType: "rotating",
+                expirationType: "expiring",
+                tokenLifetime: 60 * 60 * 24 * 30,
+                idleTokenLifetime: 60 * 60 * 24 * 15
+            },
+            callbacks: [props.{{{spa.propPrefix}}}BaseUrl],
+            allowedOrigins: [props.{{{spa.propPrefix}}}BaseUrl],
+            allowedLogoutUrls: [props.{{{spa.propPrefix}}}BaseUrl],
+            webOrigins: [props.{{{spa.propPrefix}}}BaseUrl],
+            grantTypes: [
+                "authorization_code",
+                "refresh_token",
+            ],
+        });
+
+{{/if}}
+        if (props.ses) {
+            new EmailProvider(this, "EmailProvider", {
+                name: "ses",
+                defaultFromAddress: "{{{tenant.defaultFromAddress}}}",
+                enabled: true,
+                credentials: props.ses,
+            });
+        }
+    }
+}
+
+export default Auth0Stack;

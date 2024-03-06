@@ -1,0 +1,12 @@
+import { App } from 'cdktf';
+import Auth0Stack from './auth0-stack.js';
+
+const app = new App();
+new Auth0Stack(app, "DevelopmentStack", {
+    stateKey: "development.state",
+    friendlyTenantName: "{{{tenant.friendlyName}}} (Development)",
+{{#if spa}}
+    {{{spa.propPrefix}}}BaseUrl: "https://example.com",
+{{/if}}
+});
+app.synth();

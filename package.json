@@ -1,0 +1,63 @@
+{
+  "name": "@soliantconsulting/create-auth0-cicd",
+  "version": "1.0.0",
+  "description": "Create Auth0 CICD",
+  "type": "module",
+  "author": "Soliant Consulting",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist/**/*",
+    "skeleton/**/*"
+  ],
+  "bin": {
+    "create-auth0-cicd": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "format": "biome format . --write",
+    "check": "biome check . --apply"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.5.3",
+    "@commitlint/cli": "^18.5.0",
+    "@commitlint/config-conventional": "^18.5.0",
+    "@tsconfig/node20": "^20.1.2",
+    "@types/node": "^20.11.5",
+    "@types/semver": "^7.5.6",
+    "@types/slug": "^5.0.7",
+    "@types/source-map-support": "^0.5.10",
+    "lefthook": "^1.6.0",
+    "pkg-types": "^1.0.3",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@aws-cdk/cli-lib-alpha": "2.130.0-alpha.0",
+    "@aws-sdk/client-acm": "^3.496.0",
+    "@aws-sdk/client-cloudformation": "^3.496.0",
+    "@aws-sdk/client-iam": "^3.523.0",
+    "@aws-sdk/client-s3": "^3.523.0",
+    "@aws-sdk/client-sts": "^3.496.0",
+    "@listr2/prompt-adapter-enquirer": "^2.0.1",
+    "@soliantconsulting/bitbucket-cloud-cli-auth": "^1.0.0",
+    "@soliantconsulting/bitbucket-openid-connect": "^1.1.1",
+    "auth0": "^4.3.1",
+    "aws-cdk": "^2.122.0",
+    "aws-cdk-lib": "^2.130.0",
+    "camelcase": "^8.0.0",
+    "constructs": "^10.3.0",
+    "deepmerge": "^4.3.1",
+    "enquirer": "^2.4.1",
+    "execa": "^8.0.1",
+    "glob": "^10.3.10",
+    "handlebars": "^4.7.8",
+    "listr2": "^8.0.1",
+    "meow": "^13.1.0",
+    "semver": "^7.5.4",
+    "slug": "^8.2.3",
+    "source-map-support": "^0.5.21"
+  }
+}

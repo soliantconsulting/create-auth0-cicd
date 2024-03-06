@@ -1,0 +1,17 @@
+import { App } from 'cdktf';
+import Auth0Stack from './auth0-stack.js';
+import { envVariables } from './env-variables.js';
+
+const app = new App();
+new Auth0Stack(app, "StagingStack", {
+    stateKey: "staging.state",
+    friendlyTenantName: "{{{tenant.friendlyName}}} (Staging)",
+{{#if spa}}
+    {{{spa.propPrefix}}}BaseUrl: "https://example.com",
+{{/if}}
+    ses: {
+        ...envVariables.ses,
+        region: "{{{region}}}",
+    },
+});
+app.synth();
