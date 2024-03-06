@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.0.0...v1.0.1) (2024-03-06)
+
+
+### Bug Fixes
+
+* run commitlint without bash ([2b6ec74](https://github.com/soliantconsulting/create-auth0-cicd/commit/2b6ec74dd2e4be859f034a2418207c9404dcd7e4))
+
 # 1.0.0 (2024-03-06)
 
 
