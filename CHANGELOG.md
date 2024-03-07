@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.1.0...v1.1.1) (2024-03-07)
+
+
+### Bug Fixes
+
+* **skeleton:** connect clients to connection ([a803190](https://github.com/soliantconsulting/create-auth0-cicd/commit/a80319045b688a35ada4fdb8bc3af3284e1d7af3))
+
 # [1.1.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.0.2...v1.1.0) (2024-03-06)
 
 
