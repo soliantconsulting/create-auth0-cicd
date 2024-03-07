@@ -40,7 +40,7 @@ class Auth0Stack extends TerraformStack {
             supportUrl: "{{{tenant.supportUrl}}}",
         });
 
-        new Connection(this, "UsernamePasswordAuthenticationConnection", {
+        {{#if spa}}const connection = {{/if}}new Connection(this, "UsernamePasswordAuthenticationConnection", {
             name: "Username-Password-Authentication",
             strategy: "auth0",
             options: {
@@ -74,7 +74,7 @@ class Auth0Stack extends TerraformStack {
 
 {{/if}}
 {{#if spa}}
-        new Client(this, "{{{spa.resourceName}}}", {
+        const {{{spa.propPrefix}}} = new Client(this, "{{{spa.resourceName}}}", {
             name: "{{{spa.name}}}",
             appType: "spa",
             isFirstParty: true,
@@ -86,6 +86,11 @@ class Auth0Stack extends TerraformStack {
                 tokenLifetime: 60 * 60 * 24 * 30,
                 idleTokenLifetime: 60 * 60 * 24 * 15
             },
+            initiateLoginUri:
+                props.sbiCustomerPortalBaseUrl.startsWith("https://") &&
+                !props.sbiCustomerPortalBaseUrl.startsWith("https://localhost")
+                    ? ${props.sbiCustomerPortalBaseUrl}
+                    : undefined,
             callbacks: [props.{{{spa.propPrefix}}}BaseUrl],
             allowedOrigins: [props.{{{spa.propPrefix}}}BaseUrl],
             allowedLogoutUrls: [props.{{{spa.propPrefix}}}BaseUrl],
@@ -94,6 +99,11 @@ class Auth0Stack extends TerraformStack {
                 "authorization_code",
                 "refresh_token",
             ],
+        });
+
+        new ConnectionClients(this, "UsernamePasswordAuthenticationConnectionClients", {
+            connectionId: connection.id,
+            enabledClients: [{{{spa.propPrefix}}}.id],
         });
 
 {{/if}}
