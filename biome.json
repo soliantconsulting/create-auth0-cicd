@@ -1,50 +1,41 @@
 {
-    "$schema": "https://biomejs.dev/schemas/1.5.2/schema.json",
+    "$schema": "https://biomejs.dev/schemas/1.6.1/schema.json",
     "organizeImports": {
         "enabled": true
     },
     "files": {
-        "include": [
-            "biome.json",
-            "cdk.json",
-            "release.config.cjs",
-            "commitlint.config.cjs",
-            "src/**/*"
-        ]
+        "include": ["biome.json", "commitlint.config.cjs", "packages/*/src/**/*"]
     },
     "linter": {
         "enabled": true,
         "rules": {
             "recommended": true,
             "nursery": {
-                "noEmptyTypeParameters": "error",
-                "noInvalidUseBeforeDeclaration": "error",
-                "noUnusedImports": "error",
-                "noUnusedPrivateClassMembers": "error",
-                "noUselessLoneBlockStatements": "error",
-                "noUselessTernary": "error",
-                "useExportType": "error",
-                "useImportType": "error",
-                "useForOf": "error",
-                "useGroupedTypeImport": "error"
+                "noUselessTernary": "error"
             },
             "complexity": {
                 "noExcessiveCognitiveComplexity": "warn",
                 "useSimplifiedLogicExpression": "error"
             },
             "correctness": {
-                "noNewSymbol": "error"
+                "noNewSymbol": "error",
+                "noUnusedImports": "error",
+                "noUnusedPrivateClassMembers": "error",
+                "useHookAtTopLevel": "error"
             },
             "style": {
                 "useBlockStatements": "error",
                 "useCollapsedElseIf": "error",
+                "useForOf": "error",
+                "useFragmentSyntax": "error",
                 "useShorthandArrayType": "error",
                 "useShorthandAssign": "error",
                 "useSingleCaseStatement": "error"
             },
             "suspicious": {
                 "noApproximativeNumericConstant": "warn",
-                "noConsoleLog": "error"
+                "noConsoleLog": "error",
+                "noEmptyBlockStatements": "error"
             }
         }
     },
