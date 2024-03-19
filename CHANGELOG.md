@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.1.1...v1.2.0) (2024-03-19)
+
+
+### Features
+
+* bump biome to 1.6.1 ([f7976aa](https://github.com/soliantconsulting/create-auth0-cicd/commit/f7976aa06b27367e971c648f5f82b5dcff0a2a28))
+
 ## [1.1.1](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.1.0...v1.1.1) (2024-03-07)
 
 
