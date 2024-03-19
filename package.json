@@ -1,6 +1,6 @@
 {
   "name": "@soliantconsulting/create-auth0-cicd",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Create Auth0 CICD",
   "type": "module",
   "author": "Soliant Consulting",

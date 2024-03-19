@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.2.0...v1.2.1) (2024-03-19)
+
+
+### Bug Fixes
+
+* **skeleton:** allow offline access for API ([b9391dc](https://github.com/soliantconsulting/create-auth0-cicd/commit/b9391dccd96b171bc342724887b6f2057322b643))
+
 # [1.2.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.1.1...v1.2.0) (2024-03-19)
 
 
