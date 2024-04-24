@@ -3,6 +3,7 @@ import type { Construct } from 'constructs';
 import { Branding } from './gen/providers/auth0/branding/index.js';
 import { Client } from './gen/providers/auth0/client/index.js';
 import { Connection } from './gen/providers/auth0/connection/index.js';
+import { ConnectionClients } from "./gen/providers/auth0/connection-clients/index.js";
 import { EmailProvider } from './gen/providers/auth0/email-provider/index.js';
 import { Auth0Provider } from './gen/providers/auth0/provider/index.js';
 import { ResourceServer } from './gen/providers/auth0/resource-server/index.js';
@@ -88,9 +89,9 @@ class Auth0Stack extends TerraformStack {
                 idleTokenLifetime: 60 * 60 * 24 * 15
             },
             initiateLoginUri:
-                props.sbiCustomerPortalBaseUrl.startsWith("https://") &&
-                !props.sbiCustomerPortalBaseUrl.startsWith("https://localhost")
-                    ? ${props.sbiCustomerPortalBaseUrl}
+                props.{{{spa.propPrefix}}}BaseUrl.startsWith("https://") &&
+                !props.{{{spa.propPrefix}}}BaseUrl.startsWith("https://localhost")
+                    ? props.{{{spa.propPrefix}}}BaseUrl
                     : undefined,
             callbacks: [props.{{{spa.propPrefix}}}BaseUrl],
             allowedOrigins: [props.{{{spa.propPrefix}}}BaseUrl],
