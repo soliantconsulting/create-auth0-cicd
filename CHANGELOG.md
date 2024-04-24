@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.2.1...v1.2.2) (2024-04-24)
+
+
+### Bug Fixes
+
+* missing propPrefix for initiateLoginUri ([27a2fc8](https://github.com/soliantconsulting/create-auth0-cicd/commit/27a2fc821be6959237c33cb13c16a94bbfcd0364))
+
 ## [1.2.1](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.2.0...v1.2.1) (2024-03-19)
 
 
