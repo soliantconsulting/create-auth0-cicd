@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.4.1...v1.4.2) (2024-05-15)
+
+
+### Bug Fixes
+
+* **skeleton:** ignore gen folder from biome ([163cef5](https://github.com/soliantconsulting/create-auth0-cicd/commit/163cef57fc673c03faa01d43556f157d3454bc8a))
+
 ## [1.4.1](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.4.0...v1.4.1) (2024-05-15)
 
 
