@@ -3,19 +3,19 @@
     "private": true,
     "type": "module",
     "devDependencies": {
-        "@biomejs/biome": "1.7.1",
+        "@biomejs/biome": "1.7.3",
         "@commitlint/cli": "^19.0.3",
         "@commitlint/config-conventional": "^19.0.3",
         "@tsconfig/node20": "^20.1.2",
         "@types/node": "^20.11.24",
         "@types/source-map-support": "^0.5.10",
-        "execa": "^8.0.1",
+        "execa": "^9.1.0",
         "lefthook": "^1.6.4",
         "typescript": "^5.3.3"
     },
     "dependencies": {
-        "cdktf": "^0.20.4",
-        "cdktf-cli": "^0.20.4",
+        "cdktf": "^0.20.7",
+        "cdktf-cli": "^0.20.7",
         "constructs": "^10.3.0",
         "source-map-support": "^0.5.21"
     },
