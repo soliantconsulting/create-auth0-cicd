@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.3.0...v1.4.0) (2024-05-15)
+
+
+### Bug Fixes
+
+* downgrade execa to ^8 ([ed79dd5](https://github.com/soliantconsulting/create-auth0-cicd/commit/ed79dd5c0e9a5155c25e7e0fd33a6531d4aee76b))
+
+
+### Features
+
+* bump dependencies ([f294450](https://github.com/soliantconsulting/create-auth0-cicd/commit/f29445065ee09f439664d9b06f0735a96e24156e))
+
 # [1.3.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.2.2...v1.3.0) (2024-04-25)
 
 
