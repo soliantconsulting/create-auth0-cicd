@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
-import { randomUUID } from "crypto";
-import path from "path";
-import { fileURLToPath } from "url";
+import { randomUUID } from "node:crypto";
+import { readFile, stat } from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { IAM } from "@aws-sdk/client-iam";
 import { S3 } from "@aws-sdk/client-s3";
 import { STS } from "@aws-sdk/client-sts";
@@ -11,7 +12,6 @@ import { ListrEnquirerPromptAdapter } from "@listr2/prompt-adapter-enquirer";
 import { getAccessToken } from "@soliantconsulting/bitbucket-cloud-cli-auth";
 import camelcase from "camelcase";
 import type { ExecaReturnValue } from "execa";
-import { readFile, stat } from "fs/promises";
 import { Listr, ListrLogLevels, ListrLogger } from "listr2";
 import meow from "meow";
 import semver from "semver/preload.js";

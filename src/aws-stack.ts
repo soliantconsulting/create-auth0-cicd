@@ -60,7 +60,9 @@ class AwsStack extends cdk.Stack {
 }
 
 class Producer implements ICloudAssemblyDirectoryProducer {
-    public constructor(private readonly region: string) {}
+    public constructor(private readonly region: string) {
+        // Intentionally left empty
+    }
 
     public async produce(context: AppProps["context"]): Promise<string> {
         const app = new App({ context });

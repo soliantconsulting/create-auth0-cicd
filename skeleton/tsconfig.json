@@ -1,12 +1,10 @@
 {
-   "extends": ["@tsconfig/node20/tsconfig.json"],
-   "compilerOptions": {
-      "strict": true,
-      "noImplicitAny": true,
-      "sourceMap": true,
-      "outDir": "dist"
-   },
-   "include": [
-      "src/**/*"
-   ]
+    "extends": ["@tsconfig/node20/tsconfig.json"],
+    "compilerOptions": {
+        "strict": true,
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "outDir": "dist"
+    },
+    "include": ["src/**/*"]
 }

@@ -1,7 +1,7 @@
-import path from "path";
-import { fileURLToPath } from "url";
+import { cp, mkdir, readFile, rename, writeFile } from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import merge from "deepmerge";
-import { cp, mkdir, readFile, rename, writeFile } from "fs/promises";
 import { glob } from "glob";
 import Handlebars from "handlebars";
 import type { PackageJson, TSConfig } from "pkg-types";

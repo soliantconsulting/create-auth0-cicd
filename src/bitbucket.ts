@@ -23,7 +23,9 @@ export class BitBucketClient {
         private readonly accessToken: string,
         private readonly workspace: string,
         private readonly repoSlug: string,
-    ) {}
+    ) {
+        // Intentionally left empty
+    }
 
     public async getRepositoryUuid(): Promise<string> {
         const response = await fetch(

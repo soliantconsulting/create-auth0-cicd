@@ -1,4 +1,4 @@
-import { rmSync } from "fs";
+import { rmSync } from "node:fs";
 import { execa } from "execa";
 
 await execa("pnpm", ["exec", "cdktf", "get", "--output=./src/gen"]).pipeStdout(process.stdout);
