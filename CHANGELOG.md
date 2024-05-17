@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.4.2...v1.4.3) (2024-05-17)
+
+
+### Bug Fixes
+
+* **skeleton:** return value instead of name from loadFromEnv ([31c0dfa](https://github.com/soliantconsulting/create-auth0-cicd/commit/31c0dfa688003b0c52de4f46d5af563d6f020d78))
+
 ## [1.4.2](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.4.1...v1.4.2) (2024-05-15)
 
 
