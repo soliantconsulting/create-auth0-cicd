@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.5.0...v1.5.1) (2025-01-14)
+
+
+### Bug Fixes
+
+* update bitbucket-openid-connect dependency ([afb9ae4](https://github.com/soliantconsulting/create-auth0-cicd/commit/afb9ae4c19ac04dded42109af5fc167a6be766ee))
+
 # [1.5.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.4.3...v1.5.0) (2025-01-14)
 
 
