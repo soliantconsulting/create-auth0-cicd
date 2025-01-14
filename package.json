@@ -44,7 +44,7 @@
     "@aws-sdk/client-sts": "^3.726.1",
     "@listr2/prompt-adapter-enquirer": "^2.0.12",
     "@soliantconsulting/bitbucket-cloud-cli-auth": "^1.0.0",
-    "@soliantconsulting/bitbucket-openid-connect": "^1.1.4",
+    "@soliantconsulting/bitbucket-openid-connect": "^1.2.0",
     "auth0": "^4.16.0",
     "aws-cdk": "^2.175.1",
     "aws-cdk-lib": "^2.175.1",

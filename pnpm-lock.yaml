@@ -30,8 +30,8 @@ dependencies:
     specifier: ^1.0.0
     version: 1.0.0
   '@soliantconsulting/bitbucket-openid-connect':
-    specifier: ^1.1.4
-    version: 1.1.4
+    specifier: ^1.2.0
+    version: 1.2.0
   auth0:
     specifier: ^4.16.0
     version: 4.16.0
@@ -128,11 +128,6 @@ packages:
 
   /@aws-cdk/asset-node-proxy-agent-v6@2.1.0:
     resolution: {integrity: sha512-7bY3J8GCVxLupn/kNmpPc5VJz8grx+4RKfnnJiO1LG+uxkZfANZG3RMHhE+qQxxwkyQ9/MfPtTpf748UhR425A==}
-    dev: false
-
-  /@aws-cdk/cli-lib-alpha@2.160.0-alpha.0:
-    resolution: {integrity: sha512-1SOl12B5/Kvi83T4he7Y9KVucc+VEGCXNs2qoBDOke/df3eLvZy6VqzztfUezNBvP0hkboUG7sMKRgYMdY/sEw==}
-    engines: {node: '>= 14.15.0'}
     dev: false
 
   /@aws-cdk/cli-lib-alpha@2.175.1-alpha.0:
@@ -1937,11 +1932,11 @@ packages:
       - supports-color
     dev: false
 
-  /@soliantconsulting/bitbucket-openid-connect@1.1.4:
-    resolution: {integrity: sha512-2XLzBOCUu0DXswJS6M3epIaXKQS7HZXcHj8eYEJghNAD4vWOvP0M3ObfWYUY3iq0c/i1Nzw4iomYIHJ252gWyQ==}
+  /@soliantconsulting/bitbucket-openid-connect@1.2.0:
+    resolution: {integrity: sha512-xLDscYejoyjqN7+sCxPnruxNu0ZCZpKjXlh1PGtdyPqrnt9eBsxEORVsYrL/ia8E9iTkX/nioSruGOezax65UA==}
     hasBin: true
     dependencies:
-      '@aws-cdk/cli-lib-alpha': 2.160.0-alpha.0
+      '@aws-cdk/cli-lib-alpha': 2.175.1-alpha.0
       '@aws-sdk/client-cloudformation': 3.726.1
       aws-cdk: 2.175.1
       aws-cdk-lib: 2.175.1(constructs@10.4.2)
