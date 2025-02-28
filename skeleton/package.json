@@ -23,5 +23,12 @@
         "build": "tsc",
         "format": "biome format . --write",
         "check": "biome check . --apply"
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "@biomejs/biome",
+            "@cdktf/node-pty-prebuilt-multiarch",
+            "lefthook"
+        ]
     }
 }
