@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.5.1...v1.6.0) (2025-02-28)
+
+
+### Features
+
+* upgrade to to pnpm v10 ([edc72e9](https://github.com/soliantconsulting/create-auth0-cicd/commit/edc72e94f7d3557c055843ba74eeea245cf15541))
+
 ## [1.5.1](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.5.0...v1.5.1) (2025-01-14)
 
 
