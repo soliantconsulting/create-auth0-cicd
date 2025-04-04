@@ -1,11 +1,13 @@
-import { type ExecaReturnValue, type Options, execa } from "execa";
+import { type Options, type Result, execa } from "execa";
+
+export type ExecuteResult = Result<{ encoding: "utf8" }>;
 
 export const execute = async (
     stdout: NodeJS.WritableStream | null,
     file: string,
     args: readonly string[],
     options?: Options,
-): Promise<ExecaReturnValue> => {
+): Promise<ExecuteResult> => {
     const execute = execa(file, args, options);
 
     if (stdout) {
@@ -13,5 +15,5 @@ export const execute = async (
         execute.stderr?.pipe(stdout);
     }
 
-    return execute;
+    return (await execute) as ExecuteResult;
 };

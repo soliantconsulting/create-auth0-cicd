@@ -22,7 +22,7 @@
     "scripts": {
         "build": "tsc",
         "format": "biome format . --write",
-        "check": "biome check . --apply"
+        "check": "biome check . --write"
     },
     "pnpm": {
         "onlyBuiltDependencies": [

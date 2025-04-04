@@ -11,7 +11,6 @@ import type { GetCallerIdentityResponse } from "@aws-sdk/client-sts/dist-types/m
 import { ListrEnquirerPromptAdapter } from "@listr2/prompt-adapter-enquirer";
 import { getAccessToken } from "@soliantconsulting/bitbucket-cloud-cli-auth";
 import camelcase from "camelcase";
-import type { ExecaReturnValue } from "execa";
 import { Listr, ListrLogLevels, ListrLogger } from "listr2";
 import meow from "meow";
 import semver from "semver/preload.js";
@@ -21,7 +20,7 @@ import { type Auth0Credential, setupTenant } from "./auth0.js";
 import { type AwsDeployResult, deployAwsStack } from "./aws-stack.js";
 import { BitBucketClient } from "./bitbucket.js";
 import { type ApiSettings, type SpaSettings, type TenantSettings, synthProject } from "./synth.js";
-import { execute } from "./util.js";
+import { type ExecuteResult, execute } from "./util.js";
 
 const logger = new ListrLogger();
 
@@ -80,7 +79,7 @@ const tasks = new Listr<Context>(
         {
             title: "Check pnpm version",
             task: async (_context, task): Promise<void> => {
-                let result: ExecaReturnValue;
+                let result: ExecuteResult;
 
                 try {
                     result = await execute(task.stdout(), "pnpm", ["--version"]);
@@ -100,7 +99,7 @@ const tasks = new Listr<Context>(
         {
             title: "Check auth0 version",
             task: async (_context, task): Promise<void> => {
-                let result: ExecaReturnValue;
+                let result: ExecuteResult;
 
                 try {
                     result = await execute(task.stdout(), "auth0", ["--version"]);
@@ -126,7 +125,7 @@ const tasks = new Listr<Context>(
         {
             title: "Check terraform version",
             task: async (_context, task): Promise<void> => {
-                let result: ExecaReturnValue;
+                let result: ExecuteResult;
 
                 try {
                     result = await execute(task.stdout(), "terraform", ["--version"]);
