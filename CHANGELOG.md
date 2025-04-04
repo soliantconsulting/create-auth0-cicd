@@ -1,3 +1,15 @@
+# [1.8.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.7.0...v1.8.0) (2025-04-04)
+
+
+### Bug Fixes
+
+* add .npmrc ([b492a4e](https://github.com/soliantconsulting/create-auth0-cicd/commit/b492a4e13de3b5e68f56a87d3270265f6f1a069f))
+
+
+### Features
+
+* update biome ([7eb6644](https://github.com/soliantconsulting/create-auth0-cicd/commit/7eb66446fbe10a95af2d9ee34ce773b8d1215eae))
+
 # [1.7.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.6.0...v1.7.0) (2025-04-04)
 
 
