@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.8.1...v1.8.2) (2025-04-04)
+
+
+### Bug Fixes
+
+* use pnpm dlx to run bitbucket-openid-connect ([f633ed2](https://github.com/soliantconsulting/create-auth0-cicd/commit/f633ed29bdc5c2480c6469c13de21a83c48c44e6))
+
 ## [1.8.1](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.8.0...v1.8.1) (2025-04-04)
 
 
