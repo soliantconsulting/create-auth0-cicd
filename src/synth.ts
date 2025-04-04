@@ -134,7 +134,7 @@ export const synthProject = async (
     }
 
     await execute(context.stdout, "pnpm", ["install"], { cwd: projectPath });
-    await execute(context.stdout, "pnpm", ["exec", "biome", "check", ".", "--apply"], {
+    await execute(context.stdout, "pnpm", ["exec", "biome", "check", ".", "--write"], {
         cwd: projectPath,
     });
     await execute(context.stdout, "node", ["update-provider.js"], {
