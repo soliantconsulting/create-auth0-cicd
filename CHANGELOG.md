@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.6.0...v1.7.0) (2025-04-04)
+
+
+### Features
+
+* update bitbucket pipelines ([65fc1e6](https://github.com/soliantconsulting/create-auth0-cicd/commit/65fc1e665d2033e8e98dda9afc4ff564b3acf08f))
+
 # [1.6.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.5.1...v1.6.0) (2025-02-28)
 
 
