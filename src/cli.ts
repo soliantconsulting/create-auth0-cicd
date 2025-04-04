@@ -559,8 +559,8 @@ const tasks = new Listr<Context>(
                     task.stdout(),
                     "pnpm",
                     [
-                        "exec",
-                        "bitbucket-openid-connect",
+                        "dlx",
+                        "@soliantconsulting/bitbucket-openid-connect@^1",
                         "deploy",
                         "bitbucket-openid-connect",
                         context.name,
@@ -578,8 +578,8 @@ const tasks = new Listr<Context>(
                     task.stdout(),
                     "pnpm",
                     [
-                        "exec",
-                        "bitbucket-openid-connect",
+                        "dlx",
+                        "@soliantconsulting/bitbucket-openid-connect@^1",
                         "get-role-arn",
                         "bitbucket-openid-connect",
                         context.name,
