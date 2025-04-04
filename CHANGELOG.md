@@ -1,3 +1,10 @@
+## [1.8.3](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.8.2...v1.8.3) (2025-04-04)
+
+
+### Bug Fixes
+
+* update @tsconfig/node22 package version ([11c1dc1](https://github.com/soliantconsulting/create-auth0-cicd/commit/11c1dc1081104ea53b4515660040fbed6e5f8c97))
+
 ## [1.8.2](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.8.1...v1.8.2) (2025-04-04)
 
 
