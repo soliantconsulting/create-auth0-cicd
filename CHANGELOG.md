@@ -1,3 +1,10 @@
+## [1.8.4](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.8.3...v1.8.4) (2025-04-04)
+
+
+### Bug Fixes
+
+* update tsconfig base to node22 ([5f8114c](https://github.com/soliantconsulting/create-auth0-cicd/commit/5f8114c81f63c613c57e5c4c6ffe17e703502d6d))
+
 ## [1.8.3](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.8.2...v1.8.3) (2025-04-04)
 
 
