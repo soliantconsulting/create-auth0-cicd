@@ -1,4 +1,4 @@
-image: node:20
+image: public.ecr.aws/docker/library/node:22
 
 definitions:
   caches:
@@ -15,9 +15,8 @@ definitions:
           - 'linux'
         script:
           - corepack enable
-          - corepack prepare pnpm@latest-8 --activate
           - pnpm install
-          - pnpm exec biome ci .
+          - pnpm biome ci .
         caches:
           - pnpm
     - step: &deploy
@@ -34,17 +33,16 @@ definitions:
           - export AWS_WEB_IDENTITY_TOKEN_FILE=$(pwd)/web-identity-token
           - echo $BITBUCKET_STEP_OIDC_TOKEN > $(pwd)/web-identity-token
           # Install terraform
-          - TERRAFORM_VERSION=1.7.4
+          - TERRAFORM_VERSION=1.10.3
           - wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
           - unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip
           - rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
           - mv terraform /usr/local/bin
           # Install dependencies
           - corepack enable
-          - corepack prepare pnpm@latest-8 --activate
-          - pnpm install -P
+          - pnpm install
           # Deploy with CDK
-          - pnpm exec cdktf deploy --app "node dist/env-$BITBUCKET_DEPLOYMENT_ENVIRONMENT.js" --auto-approve
+          - pnpm cdktf deploy --app "node dist/env-$BITBUCKET_DEPLOYMENT_ENVIRONMENT.js" --auto-approve
 
 pipelines:
   branches:
@@ -59,7 +57,6 @@ pipelines:
                   - 'linux'
                 script:
                   - corepack enable
-                  - corepack prepare pnpm@latest-8 --activate
                   - pnpm install
                   - pnpm build
                 caches:
@@ -92,8 +89,7 @@ pipelines:
                   - 'linux'
                 script:
                   - corepack enable
-                  - corepack prepare pnpm@latest-8 --activate
                   - pnpm install
-                  - pnpm exec tsc --noEmit
+                  - pnpm tsc --noEmit
                 caches:
                   - pnpm
