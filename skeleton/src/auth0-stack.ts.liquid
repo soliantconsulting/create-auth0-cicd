@@ -12,9 +12,9 @@ import { Tenant } from './gen/providers/auth0/tenant/index.js';
 type Props = {
     stateKey: string;
     friendlyTenantName: string;
-{{#if spa}}
-    {{{spa.propPrefix}}}BaseUrl: string;
-{{/if}}
+    {%- if spaSettings %}
+    {{spaSettings.propPrefix}}BaseUrl: string;
+    {%- endif %}
     ses?: {
         accessKeyId: string;
         secretAccessKey: string;
@@ -27,21 +27,21 @@ class Auth0Stack extends TerraformStack {
         super(scope, id);
 
         new S3Backend(this, {
-            bucket: "{{{awsDeployResult.stateBucketName}}}",
+            bucket: "{{awsResources.stackOutputs.StateBucketName}}",
             key: props.stateKey,
-            region: "{{{region}}}",
+            region: "{{awsEnv.region}}",
         });
 
         new Auth0Provider(this, "Auth0Provider");
 
         new Tenant(this, "Tenant", {
             friendlyName: props.friendlyTenantName,
-            pictureUrl: "https://{{{awsDeployResult.staticBucketDomainName}}}/tenant-logo.svg",
-            supportEmail: "{{{tenant.supportEmailAddress}}}",
-            supportUrl: "{{{tenant.supportUrl}}}",
+            pictureUrl: "https://{{awsResources.stackOutputs.StaticBucketDomainName}}/tenant-logo.svg",
+            supportEmail: "{{tenantSettings.supportEmailAddress}}",
+            supportUrl: "{{tenantSettings.supportUrl}}",
         });
 
-        {{#if spa}}const connection = {{/if}}new Connection(this, "UsernamePasswordAuthenticationConnection", {
+        {% if spaSettings %}const connection = {% endif %}new Connection(this, "UsernamePasswordAuthenticationConnection", {
             name: "Username-Password-Authentication",
             strategy: "auth0",
             options: {
@@ -59,29 +59,29 @@ class Auth0Stack extends TerraformStack {
         });
 
         new Branding(this, "Branding", {
-            logoUrl: "https://{{{awsDeployResult.staticBucketDomainName}}}/branding-logo.svg",
+            logoUrl: "https://{{awsResources.stackOutputs.StaticBucketDomainName}}/branding-logo.svg",
             colors: {
                 primary: "#635dff",
                 pageBackground: "#000000",
             },
         });
 
-{{#if api}}
-        new ResourceServer(this, "{{{api.resourceName}}}", {
-            identifier: "{{{api.identifier}}}",
-            name: "{{{api.name}}}",
+        {% if apiSettings %}
+        new ResourceServer(this, "{{apiSettings.resourceName}}", {
+            identifier: "{{apiSettings.identifier}}",
+            name: "{{apiSettings.name}}",
             skipConsentForVerifiableFirstPartyClients: true,
             allowOfflineAccess: true,
         });
+        {% endif %}
 
-{{/if}}
-{{#if spa}}
-        const {{{spa.propPrefix}}} = new Client(this, "{{{spa.resourceName}}}", {
-            name: "{{{spa.name}}}",
+        {% if spaSettings %}
+        const {{spaSettings.propPrefix}} = new Client(this, "{{spaSettings.resourceName}}", {
+            name: "{{spaSettings.name}}",
             appType: "spa",
             isFirstParty: true,
             oidcConformant: true,
-            logoUri: "https://{{{awsDeployResult.staticBucketDomainName}}}/{{{spa.identifier}}}-logo.svg",
+            logoUri: "https://{{awsResources.stackOutputs.StaticBucketDomainName}}/{{spaSettings.identifier}}-logo.svg",
             refreshToken: {
                 rotationType: "rotating",
                 expirationType: "expiring",
@@ -89,14 +89,14 @@ class Auth0Stack extends TerraformStack {
                 idleTokenLifetime: 60 * 60 * 24 * 15
             },
             initiateLoginUri:
-                props.{{{spa.propPrefix}}}BaseUrl.startsWith("https://") &&
-                !props.{{{spa.propPrefix}}}BaseUrl.startsWith("https://localhost")
-                    ? props.{{{spa.propPrefix}}}BaseUrl
+                props.{{spaSettings.propPrefix}}BaseUrl.startsWith("https://") &&
+                !props.{{spaSettings.propPrefix}}BaseUrl.startsWith("https://localhost")
+                    ? props.{{spaSettings.propPrefix}}BaseUrl
                     : undefined,
-            callbacks: [props.{{{spa.propPrefix}}}BaseUrl],
-            allowedOrigins: [props.{{{spa.propPrefix}}}BaseUrl],
-            allowedLogoutUrls: [props.{{{spa.propPrefix}}}BaseUrl],
-            webOrigins: [props.{{{spa.propPrefix}}}BaseUrl],
+            callbacks: [props.{{spaSettings.propPrefix}}BaseUrl],
+            allowedOrigins: [props.{{spaSettings.propPrefix}}BaseUrl],
+            allowedLogoutUrls: [props.{{spaSettings.propPrefix}}BaseUrl],
+            webOrigins: [props.{{spaSettings.propPrefix}}BaseUrl],
             grantTypes: [
                 "authorization_code",
                 "refresh_token",
@@ -105,14 +105,14 @@ class Auth0Stack extends TerraformStack {
 
         new ConnectionClients(this, "UsernamePasswordAuthenticationConnectionClients", {
             connectionId: connection.id,
-            enabledClients: [{{{spa.propPrefix}}}.id],
+            enabledClients: [{{spaSettings.propPrefix}}.id],
         });
+        {% endif %}
 
-{{/if}}
         if (props.ses) {
             new EmailProvider(this, "EmailProvider", {
                 name: "ses",
-                defaultFromAddress: "{{{tenant.defaultFromAddress}}}",
+                defaultFromAddress: "{{tenantSettings.defaultFromAddress}}",
                 enabled: true,
                 credentials: props.ses,
             });

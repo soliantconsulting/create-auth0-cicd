@@ -28,8 +28,8 @@ definitions:
           - pnpm
         script:
           # Configure OIDC
-          - export AWS_REGION={{{region}}}
-          - export AWS_ROLE_ARN={{{deployRoleArn}}}
+          - export AWS_REGION={{awsEnv.region}}
+          - export AWS_ROLE_ARN={{deployRole.arn}}
           - export AWS_WEB_IDENTITY_TOKEN_FILE=$(pwd)/web-identity-token
           - echo $BITBUCKET_STEP_OIDC_TOKEN > $(pwd)/web-identity-token
           # Install terraform

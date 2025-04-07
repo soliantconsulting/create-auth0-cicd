@@ -5,13 +5,13 @@ import { envVariables } from './env-variables.js';
 const app = new App();
 new Auth0Stack(app, "StagingStack", {
     stateKey: "staging.state",
-    friendlyTenantName: "{{{tenant.friendlyName}}} (Staging)",
-{{#if spa}}
-    {{{spa.propPrefix}}}BaseUrl: "https://example.com",
-{{/if}}
+    friendlyTenantName: "{{tenantSettings.friendlyName}}",
+    {%- if spaSettings %}
+    {{spaSettings.propPrefix}}BaseUrl: "https://example.com",
+    {%- endif %}
     ses: {
         ...envVariables.ses,
-        region: "{{{region}}}",
+        region: "{{awsEnv.region}}",
     },
 });
 app.synth();

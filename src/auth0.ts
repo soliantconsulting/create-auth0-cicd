@@ -1,5 +1,5 @@
+import { execute } from "@soliantconsulting/starter-lib";
 import { ManagementClient } from "auth0";
-import { execute } from "./util.js";
 
 type App = {
     name: string;

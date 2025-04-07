@@ -10,4 +10,4 @@ Project for managing Auth0 infrastructure via IaC.
 ## Provider update
 
 If a new version of the Auth0 provider should be used, update the version in `cdktf.json` and then run
-`update-provider.sh` to generate the new TypeScript files.
+`update-provider.js` to generate the new TypeScript files.
