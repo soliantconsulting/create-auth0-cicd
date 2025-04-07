@@ -12,7 +12,7 @@ import type { CdktfContext } from "./cli.js";
 import type { ApiSettingsContext } from "./tasks/api-settings.js";
 import type { AwsResourcesContext } from "./tasks/aws-resouces.js";
 import type { SpaSettingsContext } from "./tasks/spa-settings.js";
-import { synth } from "./tasks/synth.js";
+import { synthTask } from "./tasks/synth.js";
 import type { TenantSettingsContext } from "./tasks/tenant-settings.js";
 
 type BaseContext = ProjectContext &
@@ -26,7 +26,7 @@ type BaseContext = ProjectContext &
 
 await runPipeline({
     packageName: "@soliantconsulting/create-auth0-cicd",
-    tasks: [synth],
+    tasks: [synthTask],
     baseContext: {
         cdktf: {
             projectId: randomUUID(),

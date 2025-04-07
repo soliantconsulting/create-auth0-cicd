@@ -15,7 +15,7 @@ import { auth0VersionTask } from "./tasks/auth0-version.js";
 import { awsResourcesTask } from "./tasks/aws-resouces.js";
 import { bitbucketPipelineTask } from "./tasks/bitbucket-pipeline.js";
 import { spaSettingsTask } from "./tasks/spa-settings.js";
-import { synth } from "./tasks/synth.js";
+import { synthTask } from "./tasks/synth.js";
 import { tenantSettingsTask } from "./tasks/tenant-settings.js";
 import { tenantsBootstrapTask } from "./tasks/tenants-bootstrap.js";
 import { terraformVersionTask } from "./tasks/terraform-version.js";
@@ -46,7 +46,7 @@ await runPipeline({
         createProjectTask(),
         awsResourcesTask,
         bitbucketPipelineTask,
-        synth,
+        synthTask,
         createGitTask(),
     ],
     baseContext: {
