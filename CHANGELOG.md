@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.8.4...v1.9.0) (2025-04-07)
+
+
+### Features
+
+* use @soliantconsulting/starter-lib ([4e22049](https://github.com/soliantconsulting/create-auth0-cicd/commit/4e2204922cf2b4f06731239bb41b67b4c065c74a))
+
 ## [1.8.4](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.8.3...v1.8.4) (2025-04-04)
 
 
