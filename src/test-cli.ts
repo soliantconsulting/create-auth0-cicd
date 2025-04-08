@@ -33,6 +33,7 @@ await runPipeline({
         },
         project: {
             name: "test-synth",
+            title: "Test Synth",
             path: fileURLToPath(new URL("../test-synth", import.meta.url)),
         },
         awsEnv: {
