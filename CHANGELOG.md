@@ -1,3 +1,11 @@
+## [1.9.1](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.9.0...v1.9.1) (2025-04-08)
+
+
+### Bug Fixes
+
+* add missing project title to test cli ([c2f3f2c](https://github.com/soliantconsulting/create-auth0-cicd/commit/c2f3f2cad0a17429ba7eb3a0e097c4c2ddf4235d))
+* update starter lib and move project task to front ([706af2a](https://github.com/soliantconsulting/create-auth0-cicd/commit/706af2a2aea5de9aa2c1963005e70fd7d0e52db8))
+
 # [1.9.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.8.4...v1.9.0) (2025-04-07)
 
 
