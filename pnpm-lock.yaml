@@ -18,8 +18,8 @@ importers:
         specifier: ^2.0.12
         version: 2.0.12(enquirer@2.4.1)
       '@soliantconsulting/starter-lib':
-        specifier: ^1.0.1
-        version: 1.0.1(aws-cdk-lib@2.188.0(constructs@10.4.2))
+        specifier: ^1.2.3
+        version: 1.2.3(aws-cdk-lib@2.188.0(constructs@10.4.2))
       auth0:
         specifier: ^4.21.0
         version: 4.21.0
@@ -70,8 +70,8 @@ importers:
         specifier: ^5.0.9
         version: 5.0.9
       lefthook:
-        specifier: ^1.11.7
-        version: 1.11.7
+        specifier: ^1.11.8
+        version: 1.11.8
       tsx:
         specifier: ^4.19.3
         version: 4.19.3
@@ -81,8 +81,8 @@ importers:
 
 packages:
 
-  '@aws-cdk/asset-awscli-v1@2.2.230':
-    resolution: {integrity: sha512-kUnhKIYu42hqBa6a8x2/7o29ObpJgjYGQy28lZDq9awXyvpR62I2bRxrNKNR3uFUQz3ySuT9JXhGHhuZPdbnFw==}
+  '@aws-cdk/asset-awscli-v1@2.2.231':
+    resolution: {integrity: sha512-vPqD/K2pK/ALhU5r5Nafdc2nLB+LJKxNyxUmQnLsazU6AWDJfkqjHQx8m3J4Cjl2C3chQkIRMdzSDuXIlo43GA==}
 
   '@aws-cdk/asset-node-proxy-agent-v6@2.1.0':
     resolution: {integrity: sha512-7bY3J8GCVxLupn/kNmpPc5VJz8grx+4RKfnnJiO1LG+uxkZfANZG3RMHhE+qQxxwkyQ9/MfPtTpf748UhR425A==}
@@ -176,8 +176,8 @@ packages:
     resolution: {integrity: sha512-hUyMYWebb1HRCSK9jynWRQfNJoRhPaScvbePTPkNJybrVAo+7q2D5/nFP6burroRSWfYEaJXRNgr1besLjZZBA==}
     engines: {node: '>=18.0.0'}
 
-  '@aws-sdk/client-codebuild@3.782.0':
-    resolution: {integrity: sha512-CGWw4FbTHJNyEFwcOLt++44kkueMOKbBg87M/AQbnT4xAWStGE7+P6VMKn4ZRHMeEJjlJCngu4HhPIbKeLrxdQ==}
+  '@aws-sdk/client-codebuild@3.784.0':
+    resolution: {integrity: sha512-gjLEedMoebYQW6y1iNoe2+f2/waboFtNZ3lj8qMcXPozXK1wSHmCm9BQ1xfiWu9u1oSmUkTXgEXGWRSABO5trQ==}
     engines: {node: '>=18.0.0'}
 
   '@aws-sdk/client-cognito-identity@3.782.0':
@@ -912,8 +912,8 @@ packages:
   '@soliantconsulting/bitbucket-cloud-cli-auth@1.0.0':
     resolution: {integrity: sha512-W6ZKQRCCIcT8/5Xb8I7099XlYsp2hSemhGXjrwNewRRz4bfhypv+ETMErvv3kmYdC+f5NaXzyJSofc4tRZYR8w==}
 
-  '@soliantconsulting/starter-lib@1.0.1':
-    resolution: {integrity: sha512-lXLhgfs9CGd38XpwSbU50XKBZZeO8gkjQhxH1wzHFiZVcz2+/uOJ1TnpGpq4MFmdpI4DxhWGFrXhbpjxVSpYGg==}
+  '@soliantconsulting/starter-lib@1.2.3':
+    resolution: {integrity: sha512-OXui84TIOFv2jqwPwQL0jO5Cxh1VwGeLo22JRKMdiLQH84g+Ypa1E2RuGysGy0WPaVAVNXv+IGXMJnHK77orlA==}
     peerDependencies:
       aws-cdk-lib: ^2.188.0
 
@@ -1123,6 +1123,9 @@ packages:
   chalk@5.4.1:
     resolution: {integrity: sha512-zgVZuo2WcZgfUEmsn6eO3kINexW8RAE4maiQ8QNs8CtpPCSyMiYsULR3HQYkm3w8FIA3SberyMJMSldGsW+U3w==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+
+  change-case@5.4.4:
+    resolution: {integrity: sha512-HRQyTk2/YPEkt9TnUPbOpr64Uw3KOicFWPVBb+xiHvd6eBx/qPr9xqfBFDT8P2vWsvvz4jbEkfDe71W3VyNu2w==}
 
   chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
@@ -1707,58 +1710,58 @@ packages:
     resolution: {integrity: sha512-b94GiNHQNy6JNTrt5w6zNyffMrNkXZb3KTkCZJb2V1xaEGCk093vkZ2jk3tpaeP33/OiXC+WvK9AxUebnf5nbw==}
     engines: {node: '>= 0.6.3'}
 
-  lefthook-darwin-arm64@1.11.7:
-    resolution: {integrity: sha512-tLIyaYhgKowZMBMC3acuIE4WpeevOtI4M/KPGCoY5HR4uekD66nF+MicQqI+HHyT538powOFENE85XEW5YBa5A==}
+  lefthook-darwin-arm64@1.11.8:
+    resolution: {integrity: sha512-myew7k1hz00Uyrdh4a7gQkzlRDKALb4pHmh1GDH0ZMBoy3348qlN3HegAnvwcx2tlWSxqfwkBj+xmBS2c7ujAw==}
     cpu: [arm64]
     os: [darwin]
 
-  lefthook-darwin-x64@1.11.7:
-    resolution: {integrity: sha512-/Q/Elwn9dsQqSppsztG3YlVMrMiHqFKWstaPpwCEaAKL9q7Kymc/Gi+mG5zb02k0gqBGpQp+/3NnG7jaXCr+yA==}
+  lefthook-darwin-x64@1.11.8:
+    resolution: {integrity: sha512-hwwnY0jDMVDlEXDNCQIxx+sgYjSKJ2tx1LEbf7JsBv8icPMppY9UTKleRKzNv0qSaA5MKLciSWVAhi98/QzFJA==}
     cpu: [x64]
     os: [darwin]
 
-  lefthook-freebsd-arm64@1.11.7:
-    resolution: {integrity: sha512-bxRHJqooqJ050Mxmub2tAHX7TXyei4KlJ6zTTQr2Nm0wbO/78Pyd4JKVNAI2mwweV7DhWy9N3BNiQvNiZtj3FA==}
+  lefthook-freebsd-arm64@1.11.8:
+    resolution: {integrity: sha512-cllq5oqik463TwhR/3kU19gZv/MHzEl7bYIlmeXJGyS4VBZ2zbrcy5dYj0u58DkxOYjM3Jpi+0xS7FQwSOkRMg==}
     cpu: [arm64]
     os: [freebsd]
 
-  lefthook-freebsd-x64@1.11.7:
-    resolution: {integrity: sha512-j6n3HePzWflYX61GVUqAxtk0F+BSLwlvawyzphR1y5GldX7JpFMUokA/hIQy2LSPSNQuwXJ/V1HMAB1dD0mO9Q==}
+  lefthook-freebsd-x64@1.11.8:
+    resolution: {integrity: sha512-qGPo95rvzarOl7RUWcnVtkqKTYGpyFnJNnU47bvspeancENQcjzF2QLQnvfVfuTR6oR2rhHE/2z9aq//gxQJ+w==}
     cpu: [x64]
     os: [freebsd]
 
-  lefthook-linux-arm64@1.11.7:
-    resolution: {integrity: sha512-06WMyiecNQyiSdYm04h5O/UdkUJcbr81SI1ZnRxOyo3hIwcgXMH+o1Vpmj4+C0tPLfaOIUt/HUwsyifRh0spHQ==}
+  lefthook-linux-arm64@1.11.8:
+    resolution: {integrity: sha512-i5B5BQntVNg/7Glei36U2uCsVdUiJVmxna2eJalMW06t2cb84fsNKPUqQCiUb/mmbs8YaNgZTG/AKezsGP3RgQ==}
     cpu: [arm64]
     os: [linux]
 
-  lefthook-linux-x64@1.11.7:
-    resolution: {integrity: sha512-Ov1Tw6MWt45RK5KV4ytS51Fa68f/LAmXZe3+hHjBO9pLVV2ThQgMw2b/H5FCTsO3yB63jF3ZjqVWrjGrq4KJ9Q==}
+  lefthook-linux-x64@1.11.8:
+    resolution: {integrity: sha512-B7zqxVc+9bQ6Bkdfu2TreJNoY6J2AFXIcm/JTD1NQMBHTkIbFysSQUKqiaCs9BHUCGuNOCTpuk7YHa9nlszRiA==}
     cpu: [x64]
     os: [linux]
 
-  lefthook-openbsd-arm64@1.11.7:
-    resolution: {integrity: sha512-908bxsvDapflisA/WpvyKqL30dIIpGiDS8GaTRMvHcZGbs/T04zuLHBaT+kKUSOOPMQS0KAyjyBuZFQE+k5EBQ==}
+  lefthook-openbsd-arm64@1.11.8:
+    resolution: {integrity: sha512-08kdSBxtcdTFRMIQwaziXGdG3RxrzH2QkRWeNAoUG7PpV5itIb5j+xnZqOeYM6eTLgf7QUle1xKcNwcWACuefw==}
     cpu: [arm64]
     os: [openbsd]
 
-  lefthook-openbsd-x64@1.11.7:
-    resolution: {integrity: sha512-bkclgZyGJTHdYHrOO45nIgeNzo5SwiKKAWC9tnotpIJzP08yQSaLtwrmeohCro1Xy4jGy6Ndoh2Xer/0xGerig==}
+  lefthook-openbsd-x64@1.11.8:
+    resolution: {integrity: sha512-HlGr9t33BAnKZz9I11qRMijJpGg6/iMtb8ODIcStdM72FGgadqSLBHbNAJbD4dnN2wwR1PPu2POut/OYQfpGtg==}
     cpu: [x64]
     os: [openbsd]
 
-  lefthook-windows-arm64@1.11.7:
-    resolution: {integrity: sha512-9/0XG/Joth69T4Z1o2J6d+IsTb443CKDjvdXkW+pVZQKlsCLJNkuwufTWRXxazOr4glyfKXE7lwGnNRsutbPMQ==}
+  lefthook-windows-arm64@1.11.8:
+    resolution: {integrity: sha512-iBgsUdLL3d6Ty5N3s4gCgxjIDviP7flBeVb6BUy5BbNzjW+OzljKx8DlzTAUmMnUJuo+a+svYYCjqwcNs1/nvA==}
     cpu: [arm64]
     os: [win32]
 
-  lefthook-windows-x64@1.11.7:
-    resolution: {integrity: sha512-VEMal4pogl1kWR/iSQZpxNRdqoplRSqfriwDRbRWmwHjosWZlOk5on6noySiuwkryX0LVZFRiQmwFoJxdisQ4g==}
+  lefthook-windows-x64@1.11.8:
+    resolution: {integrity: sha512-nFFS6jB7PxHXJ7nIg59+507j1myFeX1Kq3ssqGI5uxK42nCcSKXBGnnEjUnq3WpbWM8b9Ly005jDb4LN0yIvVw==}
     cpu: [x64]
     os: [win32]
 
-  lefthook@1.11.7:
-    resolution: {integrity: sha512-74gu0g/o1KmnHPgbGnIgZB0d9dNWHrc7RV095noelttV4TaMwO3AKe6h9oCSHadA4PoomwEgS9Cny7++ikRmzg==}
+  lefthook@1.11.8:
+    resolution: {integrity: sha512-U+x49i83GWjRigejsiEnGMsH34SjUFtSGd4VuEUWDFzDc2uerzTx5oqFv0GMwCIXTxsecoPqop+e+1gop8DDXA==}
     hasBin: true
 
   lines-and-columns@1.2.4:
@@ -2356,7 +2359,7 @@ packages:
 
 snapshots:
 
-  '@aws-cdk/asset-awscli-v1@2.2.230': {}
+  '@aws-cdk/asset-awscli-v1@2.2.231': {}
 
   '@aws-cdk/asset-node-proxy-agent-v6@2.1.0': {}
 
@@ -2409,7 +2412,7 @@ snapshots:
       '@aws-sdk/client-cloudcontrol': 3.782.0
       '@aws-sdk/client-cloudformation': 3.782.0
       '@aws-sdk/client-cloudwatch-logs': 3.782.0
-      '@aws-sdk/client-codebuild': 3.782.0
+      '@aws-sdk/client-codebuild': 3.784.0
       '@aws-sdk/client-ec2': 3.783.0
       '@aws-sdk/client-ecr': 3.782.0
       '@aws-sdk/client-ecs': 3.782.0
@@ -2694,7 +2697,7 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/client-codebuild@3.782.0':
+  '@aws-sdk/client-codebuild@3.784.0':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
@@ -4417,7 +4420,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@soliantconsulting/starter-lib@1.0.1(aws-cdk-lib@2.188.0(constructs@10.4.2))':
+  '@soliantconsulting/starter-lib@1.2.3(aws-cdk-lib@2.188.0(constructs@10.4.2))':
     dependencies:
       '@aws-cdk/toolkit-lib': 0.1.8
       '@aws-sdk/client-cloudformation': 3.782.0
@@ -4425,6 +4428,7 @@ snapshots:
       '@listr2/prompt-adapter-enquirer': 2.0.12(enquirer@2.4.1)
       '@soliantconsulting/bitbucket-cloud-cli-auth': 1.0.0
       aws-cdk-lib: 2.188.0(constructs@10.4.2)
+      change-case: 5.4.4
       enquirer: 2.4.1
       execa: 9.5.2
       liquidjs: 10.21.0
@@ -4540,7 +4544,7 @@ snapshots:
 
   aws-cdk-lib@2.188.0(constructs@10.4.2):
     dependencies:
-      '@aws-cdk/asset-awscli-v1': 2.2.230
+      '@aws-cdk/asset-awscli-v1': 2.2.231
       '@aws-cdk/asset-node-proxy-agent-v6': 2.1.0
       '@aws-cdk/cloud-assembly-schema': 41.2.0
       constructs: 10.4.2
@@ -4634,6 +4638,8 @@ snapshots:
       supports-color: 7.2.0
 
   chalk@5.4.1: {}
+
+  change-case@5.4.4: {}
 
   chokidar@3.6.0:
     dependencies:
@@ -5238,48 +5244,48 @@ snapshots:
     dependencies:
       readable-stream: 2.3.8
 
-  lefthook-darwin-arm64@1.11.7:
+  lefthook-darwin-arm64@1.11.8:
     optional: true
 
-  lefthook-darwin-x64@1.11.7:
+  lefthook-darwin-x64@1.11.8:
     optional: true
 
-  lefthook-freebsd-arm64@1.11.7:
+  lefthook-freebsd-arm64@1.11.8:
     optional: true
 
-  lefthook-freebsd-x64@1.11.7:
+  lefthook-freebsd-x64@1.11.8:
     optional: true
 
-  lefthook-linux-arm64@1.11.7:
+  lefthook-linux-arm64@1.11.8:
     optional: true
 
-  lefthook-linux-x64@1.11.7:
+  lefthook-linux-x64@1.11.8:
     optional: true
 
-  lefthook-openbsd-arm64@1.11.7:
+  lefthook-openbsd-arm64@1.11.8:
     optional: true
 
-  lefthook-openbsd-x64@1.11.7:
+  lefthook-openbsd-x64@1.11.8:
     optional: true
 
-  lefthook-windows-arm64@1.11.7:
+  lefthook-windows-arm64@1.11.8:
     optional: true
 
-  lefthook-windows-x64@1.11.7:
+  lefthook-windows-x64@1.11.8:
     optional: true
 
-  lefthook@1.11.7:
+  lefthook@1.11.8:
     optionalDependencies:
-      lefthook-darwin-arm64: 1.11.7
-      lefthook-darwin-x64: 1.11.7
-      lefthook-freebsd-arm64: 1.11.7
-      lefthook-freebsd-x64: 1.11.7
-      lefthook-linux-arm64: 1.11.7
-      lefthook-linux-x64: 1.11.7
-      lefthook-openbsd-arm64: 1.11.7
-      lefthook-openbsd-x64: 1.11.7
-      lefthook-windows-arm64: 1.11.7
-      lefthook-windows-x64: 1.11.7
+      lefthook-darwin-arm64: 1.11.8
+      lefthook-darwin-x64: 1.11.8
+      lefthook-freebsd-arm64: 1.11.8
+      lefthook-freebsd-x64: 1.11.8
+      lefthook-linux-arm64: 1.11.8
+      lefthook-linux-x64: 1.11.8
+      lefthook-openbsd-arm64: 1.11.8
+      lefthook-openbsd-x64: 1.11.8
+      lefthook-windows-arm64: 1.11.8
+      lefthook-windows-x64: 1.11.8
 
   lines-and-columns@1.2.4: {}
 

@@ -30,7 +30,7 @@
     "@types/node": "^22.14.0",
     "@types/semver": "^7.7.0",
     "@types/slug": "^5.0.9",
-    "lefthook": "^1.11.7",
+    "lefthook": "^1.11.8",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3"
   },
@@ -38,7 +38,7 @@
     "@aws-sdk/client-iam": "^3.782.0",
     "@aws-sdk/client-s3": "^3.782.0",
     "@listr2/prompt-adapter-enquirer": "^2.0.12",
-    "@soliantconsulting/starter-lib": "^1.0.1",
+    "@soliantconsulting/starter-lib": "^1.2.3",
     "auth0": "^4.21.0",
     "aws-cdk-lib": "^2.188.0",
     "camelcase": "^8.0.0",
