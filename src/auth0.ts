@@ -121,7 +121,9 @@ const deleteDefaultResources = async (
     const connections = await management.connections.getAll();
 
     for (const connection of connections.data) {
-        await management.connections.delete({ id: connection.id });
+        if (connection.id) {
+            await management.connections.delete({ id: connection.id });
+        }
     }
 };
 
