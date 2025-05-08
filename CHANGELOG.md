@@ -1,3 +1,10 @@
+## [1.9.3](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.9.2...v1.9.3) (2025-05-08)
+
+
+### Bug Fixes
+
+* update to latest starter-lib ([5bf913d](https://github.com/soliantconsulting/create-auth0-cicd/commit/5bf913d2dc65a02cb819033ffc3fbf77441ffd4d))
+
 ## [1.9.2](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.9.1...v1.9.2) (2025-05-08)
 
 
