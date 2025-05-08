@@ -1,3 +1,11 @@
+## [1.9.2](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.9.1...v1.9.2) (2025-05-08)
+
+
+### Bug Fixes
+
+* only delete connection when it has an ID ([fab353d](https://github.com/soliantconsulting/create-auth0-cicd/commit/fab353dc3ec5c10b9036c0508f4ebea58585759d))
+* update starter lib ([da2503e](https://github.com/soliantconsulting/create-auth0-cicd/commit/da2503eaa07470c162dd6038019bf1f3e99ca874))
+
 ## [1.9.1](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.9.0...v1.9.1) (2025-04-08)
 
 
