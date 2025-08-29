@@ -37,7 +37,7 @@
     "@aws-sdk/client-iam": "^3.876.0",
     "@aws-sdk/client-s3": "^3.878.0",
     "@listr2/prompt-adapter-enquirer": "^3.0.2",
-    "@soliantconsulting/starter-lib": "^2.0.0",
+    "@soliantconsulting/starter-lib": "^2.0.1",
     "@tsconfig/node24": "^24.0.1",
     "auth0": "^4.28.0",
     "aws-cdk-lib": "^2.213.0",

@@ -18,8 +18,8 @@ importers:
         specifier: ^3.0.2
         version: 3.0.2(enquirer@2.4.1)(listr2@9.0.2)
       '@soliantconsulting/starter-lib':
-        specifier: ^2.0.0
-        version: 2.0.0(@aws-cdk/cli-plugin-contract@2.180.1)(aws-cdk-lib@2.213.0(constructs@10.4.2))
+        specifier: ^2.0.1
+        version: 2.0.1(@aws-cdk/cli-plugin-contract@2.180.1)(aws-cdk-lib@2.213.0(constructs@10.4.2))
       '@tsconfig/node24':
         specifier: ^24.0.1
         version: 24.0.1
@@ -918,8 +918,8 @@ packages:
   '@soliantconsulting/bitbucket-cloud-cli-auth@1.0.0':
     resolution: {integrity: sha512-W6ZKQRCCIcT8/5Xb8I7099XlYsp2hSemhGXjrwNewRRz4bfhypv+ETMErvv3kmYdC+f5NaXzyJSofc4tRZYR8w==}
 
-  '@soliantconsulting/starter-lib@2.0.0':
-    resolution: {integrity: sha512-dHEUVqfOpXpH8W19awNE++OecPPXPsXrU0t038VcCrK3NZZqH6sMcTMhniJDFXrBcZDGjK/XewsCPYDyNdHbqQ==}
+  '@soliantconsulting/starter-lib@2.0.1':
+    resolution: {integrity: sha512-RC+6vko2G1UcApf4ab2qY9Jz/lv56wnMRkZTSju50Ndozex0V7CO/XEItv9s21OwFjG1k7f2FFTAnM7pK0ldzA==}
     peerDependencies:
       aws-cdk-lib: ^2.188.0
 
@@ -4255,7 +4255,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@soliantconsulting/starter-lib@2.0.0(@aws-cdk/cli-plugin-contract@2.180.1)(aws-cdk-lib@2.213.0(constructs@10.4.2))':
+  '@soliantconsulting/starter-lib@2.0.1(@aws-cdk/cli-plugin-contract@2.180.1)(aws-cdk-lib@2.213.0(constructs@10.4.2))':
     dependencies:
       '@aws-cdk/toolkit-lib': 1.6.1(@aws-cdk/cli-plugin-contract@2.180.1)
       '@aws-sdk/client-cloudformation': 3.876.0
