@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.9.3...v1.10.0) (2025-08-29)
+
+
+### Features
+
+* allow skipping certain environment ([3e22cb1](https://github.com/soliantconsulting/create-auth0-cicd/commit/3e22cb15f01835c791f85578544995c831ae2dd2))
+
 ## [1.9.3](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.9.2...v1.9.3) (2025-05-08)
 
 
