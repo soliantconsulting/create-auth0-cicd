@@ -5,8 +5,8 @@ import { IAM } from "@aws-sdk/client-iam";
 import { S3 } from "@aws-sdk/client-s3";
 import {
     type AwsEnvContext,
-    type ProjectContext,
     deployStack,
+    type ProjectContext,
     requireContext,
 } from "@soliantconsulting/starter-lib";
 import { CfnOutput, RemovalPolicy, Stack } from "aws-cdk-lib";

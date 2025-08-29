@@ -4,30 +4,23 @@
     "private": true,
     "type": "module",
     "devDependencies": {
-        "@biomejs/biome": "1.9.4",
-        "@commitlint/cli": "^19.8.0",
-        "@commitlint/config-conventional": "^19.8.0",
-        "@tsconfig/node22": "^22.0.1",
-        "@types/node": "^22.14.0",
-        "execa": "^9.5.2",
-        "lefthook": "^1.11.6",
-        "typescript": "^5.8.3"
+        "@biomejs/biome": "2.2.2",
+        "@commitlint/cli": "^19.8.1",
+        "@commitlint/config-conventional": "^19.8.1",
+        "@tsconfig/node22": "^22.0.2",
+        "@types/node": "^24.3.0",
+        "execa": "^9.6.0",
+        "lefthook": "^1.12.3",
+        "typescript": "^5.9.2"
     },
     "dependencies": {
-        "cdktf": "^0.20.11",
-        "cdktf-cli": "^0.20.11",
+        "cdktf": "^0.21.0",
+        "cdktf-cli": "^0.21.0",
         "constructs": "^10.4.2"
     },
     "scripts": {
         "build": "tsc",
         "format": "biome format . --write",
         "check": "biome check . --write"
-    },
-    "pnpm": {
-        "onlyBuiltDependencies": [
-            "@biomejs/biome",
-            "@cdktf/node-pty-prebuilt-multiarch",
-            "lefthook"
-        ]
     }
 }

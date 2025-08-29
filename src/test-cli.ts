@@ -14,6 +14,7 @@ import type { AwsResourcesContext } from "./tasks/aws-resouces.js";
 import type { SpaSettingsContext } from "./tasks/spa-settings.js";
 import { synthTask } from "./tasks/synth.js";
 import type { TenantSettingsContext } from "./tasks/tenant-settings.js";
+import type { TenantsBootstrapContext } from "./tasks/tenants-bootstrap.js";
 
 type BaseContext = ProjectContext &
     AwsEnvContext &
@@ -22,6 +23,7 @@ type BaseContext = ProjectContext &
     ApiSettingsContext &
     AwsResourcesContext &
     SpaSettingsContext &
+    TenantsBootstrapContext &
     TenantSettingsContext;
 
 await runPipeline({
@@ -42,6 +44,17 @@ await runPipeline({
         },
         deployRole: {
             arn: "arn://unknown",
+        },
+        tenantsBootstrap: {
+            auth0Credentials: {
+                development: {
+                    tenant: "https://example.auth0.com",
+                    clientId: "client-id",
+                    clientSecret: "client-secret",
+                },
+                staging: null,
+                production: null,
+            },
         },
         tenantSettings: {
             friendlyName: "Test Tenant",

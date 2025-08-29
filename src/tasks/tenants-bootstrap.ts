@@ -6,9 +6,9 @@ import { type Auth0Credential, setupTenant } from "../auth0.js";
 export type TenantsBootstrapContext = {
     tenantsBootstrap: {
         auth0Credentials: {
-            development: Auth0Credential;
-            staging: Auth0Credential;
-            production: Auth0Credential;
+            development: Auth0Credential | null;
+            staging: Auth0Credential | null;
+            production: Auth0Credential | null;
         };
     };
 };
@@ -21,7 +21,7 @@ export const tenantsBootstrapTask: ListrTask<Partial<TenantsBootstrapContext>> =
             type: "confirm",
             message: "Created and logged into all tenants?",
             footer:
-                "You must create three tenants (<name>, <name>-development, <name>-staging).\n" +
+                "You must create one to three tenants (<name>, <name>-development, <name>-staging).\n" +
                 "Set each tenants environments tag to their respective environment.\n" +
                 "Then run `auth0 login --scopes create:client_grants,delete:connections` for each tenant.",
         });
@@ -41,12 +41,15 @@ export const tenantsBootstrapTask: ListrTask<Partial<TenantsBootstrapContext>> =
             })
             .sort();
 
+        const noneOption = "❌ None (do not provision env)";
+        tenants.unshift(noneOption);
+
         if (tenants.length === 0) {
             throw new Error("No tenants found");
         }
 
         const envs = ["development", "staging", "production"] as const;
-        const credentials: Record<string, Auth0Credential> = {};
+        const credentials: Record<string, Auth0Credential | null> = {};
 
         context.tenantsBootstrap = {
             auth0Credentials:
@@ -64,6 +67,11 @@ export const tenantsBootstrapTask: ListrTask<Partial<TenantsBootstrapContext>> =
                         message: `Tenant for ${env}:`,
                         choices: tenants,
                     });
+
+                    if (tenant === noneOption) {
+                        credentials[env] = null;
+                        return;
+                    }
 
                     const confirmed = await prompt.run<boolean>({
                         type: "confirm",

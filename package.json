@@ -23,38 +23,31 @@
     "check": "biome check . --write"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.2.2",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
-    "@tsconfig/node22": "^22.0.1",
-    "@types/node": "^22.15.17",
+    "@types/node": "^24.3.0",
     "@types/semver": "^7.7.0",
     "@types/slug": "^5.0.9",
-    "lefthook": "^1.11.12",
-    "tsx": "^4.19.4",
-    "typescript": "^5.8.3"
+    "lefthook": "^1.12.3",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
-    "@aws-sdk/client-iam": "^3.806.0",
-    "@aws-sdk/client-s3": "^3.806.0",
-    "@listr2/prompt-adapter-enquirer": "^2.0.16",
-    "@soliantconsulting/starter-lib": "^1.2.5",
-    "auth0": "^4.23.0",
-    "aws-cdk-lib": "^2.195.0",
+    "@aws-sdk/client-iam": "^3.876.0",
+    "@aws-sdk/client-s3": "^3.878.0",
+    "@listr2/prompt-adapter-enquirer": "^3.0.2",
+    "@soliantconsulting/starter-lib": "^2.0.0",
+    "@tsconfig/node24": "^24.0.1",
+    "auth0": "^4.28.0",
+    "aws-cdk-lib": "^2.213.0",
     "camelcase": "^8.0.0",
     "constructs": "^10.4.2",
     "enquirer": "^2.4.1",
-    "listr2": "^8.3.3",
-    "semver": "^7.7.1",
-    "slug": "^10.0.0",
-    "zod": "^3.24.4"
+    "listr2": "^9.0.2",
+    "semver": "^7.7.2",
+    "slug": "^11.0.0",
+    "zod": "^4.1.5"
   },
-  "packageManager": "pnpm@10.5.2+sha512.da9dc28cd3ff40d0592188235ab25d3202add8a207afbedc682220e4a0029ffbff4562102b9e6e46b4e3f9e8bd53e6d05de48544b0c57d4b0179e22c76d1199b",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@biomejs/biome",
-      "esbuild",
-      "lefthook"
-    ]
-  }
+  "packageManager": "pnpm@10.15.0+sha512.486ebc259d3e999a4e8691ce03b5cac4a71cbeca39372a9b762cb500cfdf0873e2cb16abe3d951b1ee2cf012503f027b98b6584e4df22524e0c7450d9ec7aa7b"
 }

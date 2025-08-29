@@ -1,11 +1,11 @@
 import assert from "node:assert";
 import { ListrEnquirerPromptAdapter } from "@listr2/prompt-adapter-enquirer";
 import {
+    BitBucketClient,
     type BitbucketRepositoryContext,
     type Environment,
     requireContext,
 } from "@soliantconsulting/starter-lib";
-import { BitBucketClient } from "@soliantconsulting/starter-lib";
 import type { ListrTask } from "listr2";
 import { z } from "zod";
 import type { TenantsBootstrapContext } from "./tenants-bootstrap.js";
@@ -83,6 +83,11 @@ export const bitbucketPipelineTask: ListrTask<
 
         for (const [pipelineEnv, auth0Env] of envs) {
             const credentials = tenantsBootstrapContext.auth0Credentials[auth0Env];
+
+            if (credentials === null) {
+                continue;
+            }
+
             const environment = environments.find(
                 (environment) => environment.name === pipelineEnv,
             );

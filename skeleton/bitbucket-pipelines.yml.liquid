@@ -1,4 +1,4 @@
-image: public.ecr.aws/docker/library/node:22
+image: public.ecr.aws/docker/library/node:24
 
 definitions:
   caches:
@@ -63,20 +63,26 @@ pipelines:
                   - pnpm
                 artifacts:
                   - dist/**
+      {%- if tenantsBootstrap.auth0Credentials.development %}
       - step:
           <<: *deploy
           name: Deploy Development
           deployment: test
+      {%- endif %}
+      {%- if tenantsBootstrap.auth0Credentials.staging %}
       - step:
           <<: *deploy
           name: Deploy Staging
           deployment: staging
           trigger: manual
+      {%- endif %}
+      {%- if tenantsBootstrap.auth0Credentials.production %}
       - step:
           <<: *deploy
           name: Deploy Production
           deployment: production
           trigger: manual
+      {%- endif %}
   pull-requests:
     '**':
       - parallel:
