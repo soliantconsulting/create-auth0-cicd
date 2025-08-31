@@ -41,12 +41,12 @@ export const tenantsBootstrapTask: ListrTask<Partial<TenantsBootstrapContext>> =
             })
             .sort();
 
-        const noneOption = "❌ None (do not provision env)";
-        tenants.unshift(noneOption);
-
         if (tenants.length === 0) {
             throw new Error("No tenants found");
         }
+
+        const noneOption = "None";
+        tenants.unshift(noneOption);
 
         const envs = ["development", "staging", "production"] as const;
         const credentials: Record<string, Auth0Credential | null> = {};
