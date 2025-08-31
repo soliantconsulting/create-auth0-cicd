@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.10.2...v1.11.0) (2025-08-31)
+
+
+### Features
+
+* add .editorconfig ([6323773](https://github.com/soliantconsulting/create-auth0-cicd/commit/6323773974cb88a460c9fb9d6167480de0972e08))
+
 ## [1.10.2](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.10.1...v1.10.2) (2025-08-31)
 
 
