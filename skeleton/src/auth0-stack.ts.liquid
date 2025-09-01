@@ -8,6 +8,9 @@ import { EmailProvider } from './gen/providers/auth0/email-provider/index.js';
 import { Auth0Provider } from './gen/providers/auth0/provider/index.js';
 import { ResourceServer } from './gen/providers/auth0/resource-server/index.js';
 import { Tenant } from './gen/providers/auth0/tenant/index.js';
+import { AssetMap } from "./assets.js";
+
+const assetMap = new AssetMap();
 
 type Props = {
     stateKey: string;
@@ -36,7 +39,7 @@ class Auth0Stack extends TerraformStack {
 
         new Tenant(this, "Tenant", {
             friendlyName: props.friendlyTenantName,
-            pictureUrl: "https://{{awsResources.stackOutputs.StaticBucketDomainName}}/tenant-logo.svg",
+            pictureUrl: assetMap.get("logo.svg"),
             supportEmail: "{{tenantSettings.supportEmailAddress}}",
             supportUrl: "{{tenantSettings.supportUrl}}",
         });
@@ -59,7 +62,7 @@ class Auth0Stack extends TerraformStack {
         });
 
         new Branding(this, "Branding", {
-            logoUrl: "https://{{awsResources.stackOutputs.StaticBucketDomainName}}/branding-logo.svg",
+            logoUrl: assetMap.get("logo.svg"),
             colors: {
                 primary: "#635dff",
                 pageBackground: "#000000",
@@ -81,7 +84,7 @@ class Auth0Stack extends TerraformStack {
             appType: "spa",
             isFirstParty: true,
             oidcConformant: true,
-            logoUri: "https://{{awsResources.stackOutputs.StaticBucketDomainName}}/{{spaSettings.identifier}}-logo.svg",
+            logoUri: assetMap.get("logo.svg"),
             refreshToken: {
                 rotationType: "rotating",
                 expirationType: "expiring",

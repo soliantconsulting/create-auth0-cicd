@@ -1,8 +1,5 @@
 import assert from "node:assert";
-import { readFile } from "node:fs/promises";
-import { fileURLToPath } from "node:url";
 import { IAM } from "@aws-sdk/client-iam";
-import { S3 } from "@aws-sdk/client-s3";
 import {
     type AwsEnvContext,
     deployStack,
@@ -42,7 +39,6 @@ export const awsResourcesTask: ListrTask<
         const awsEnvContext = requireContext(context, "awsEnv");
         assert(awsEnvContext, "AWS env context not configured");
         const projectContext = requireContext(context, "project");
-        const spaSettingsContext = requireContext(context, "spaSettings");
 
         const outputs = await deployStack(
             awsEnvContext.region,
@@ -81,33 +77,6 @@ export const awsResourcesTask: ListrTask<
             )
         ) {
             throw new Error("Could not create access key");
-        }
-
-        const logo = await readFile(
-            fileURLToPath(new URL("../../assets/logo.svg", import.meta.url)),
-        );
-
-        const s3 = new S3({ region: awsEnvContext.region });
-        await s3.putObject({
-            Bucket: outputs.StaticBucketName,
-            Key: "tenant-logo.svg",
-            Body: logo,
-            ContentType: "image/svg+xml",
-        });
-        await s3.putObject({
-            Bucket: outputs.StaticBucketName,
-            Key: "branding-logo.svg",
-            Body: logo,
-            ContentType: "image/svg+xml",
-        });
-
-        if (spaSettingsContext) {
-            await s3.putObject({
-                Bucket: outputs.StaticBucketName,
-                Key: `${spaSettingsContext.identifier}-logo.svg`,
-                Body: logo,
-                ContentType: "image/svg+xml",
-            });
         }
 
         context.awsResources = {

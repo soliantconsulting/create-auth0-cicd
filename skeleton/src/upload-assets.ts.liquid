@@ -1,0 +1,83 @@
+import { HeadObjectCommand, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
+import { createHash } from "crypto";
+import { promises as fs } from "fs";
+import mime from "mime";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const s3 = new S3Client();
+
+const walkDir = async (dir: string): Promise<string[]> => {
+    const entries = await fs.readdir(dir, { withFileTypes: true });
+
+    const files = await Promise.all(
+        entries.map(async (entry) => {
+            const fullPath = path.join(dir, entry.name);
+            return entry.isDirectory() ? walkDir(fullPath) : fullPath;
+        }),
+    );
+
+    return files.flat();
+};
+
+const getObjectKey = (assetsDir: string, assetPath: string, fileBuffer: Buffer): string => {
+    const hash = createHash("sha256").update(fileBuffer).digest("hex").slice(0, 16);
+    const ext = path.extname(assetPath);
+    const baseName = path.basename(assetPath, ext);
+    const dir = path.dirname(path.relative(assetsDir, assetPath)).replace(/\\/g, "/");
+
+    return dir && dir !== "." ? `${dir}/${baseName}.${hash}${ext}` : `${baseName}.${hash}${ext}`;
+};
+
+export const uploadAssets = async (assetsDir: string, bucket: string, baseUrl: string) => {
+    const assetFiles = await walkDir(assetsDir);
+    const manifest: Record<string, string> = {};
+
+    for (const absPath of assetFiles) {
+        const relPath = path.relative(assetsDir, absPath).replace(/\\/g, "/");
+        const fileBuffer = await fs.readFile(absPath);
+        const key = getObjectKey(assetsDir, absPath, fileBuffer);
+
+        const contentType = mime.getType(relPath) ?? "application/octet-stream";
+
+        let exists = true;
+
+        try {
+            await s3.send(new HeadObjectCommand({ Bucket: bucket, Key: key }));
+        } catch {
+            exists = false;
+        }
+
+        manifest[relPath] = `${baseUrl}/${key}`;
+
+        if (!exists) {
+            console.info(`Skipped (exists): ${relPath} → ${key}`);
+            continue;
+        }
+
+        await s3.send(
+            new PutObjectCommand({
+                Bucket: bucket,
+                Key: key,
+                Body: fileBuffer,
+                ContentType: contentType,
+                CacheControl: "public, max-age=31536000, immutable",
+            }),
+        );
+
+        console.info(`Uploaded: ${relPath} → ${key}`);
+    }
+
+    const manifestPath = path.join(process.cwd(), "asset-manifest.json");
+    await fs.writeFile(manifestPath, JSON.stringify(manifest, null, 2));
+
+    console.info(`Manifest written to ${manifestPath}`);
+
+    return manifest;
+};
+
+await uploadAssets(
+    fileURLToPath(new URL("../assets", import.meta.url)),
+    "{{awsResources.stackOutputs.StaticBucketName}}",
+    "https://{{awsResources.stackOutputs.StaticBucketDomainName}}",
+);
