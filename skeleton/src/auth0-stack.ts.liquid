@@ -1,12 +1,18 @@
 import { S3Backend, TerraformStack } from 'cdktf';
 import type { Construct } from 'constructs';
 import { Branding } from './gen/providers/auth0/branding/index.js';
+{%- if spaSettings %}
 import { Client } from './gen/providers/auth0/client/index.js';
+{%- endif %}
 import { Connection } from './gen/providers/auth0/connection/index.js';
+{%- if spaSettings %}
 import { ConnectionClients } from "./gen/providers/auth0/connection-clients/index.js";
+{%- endif %}
 import { EmailProvider } from './gen/providers/auth0/email-provider/index.js';
 import { Auth0Provider } from './gen/providers/auth0/provider/index.js';
+{%- if apiSettings %}
 import { ResourceServer } from './gen/providers/auth0/resource-server/index.js';
+{%- endif %}
 import { Tenant } from './gen/providers/auth0/tenant/index.js';
 import { AssetMap } from "./assets.js";
 
