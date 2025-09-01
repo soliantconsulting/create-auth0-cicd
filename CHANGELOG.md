@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.11.0...v1.12.0) (2025-09-01)
+
+
+### Features
+
+* upload assets in pipeline ([9a6d89d](https://github.com/soliantconsulting/create-auth0-cicd/commit/9a6d89d5bdc8eebbcd650dcc63239bacf4b11257))
+
 # [1.11.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.10.2...v1.11.0) (2025-08-31)
 
 
