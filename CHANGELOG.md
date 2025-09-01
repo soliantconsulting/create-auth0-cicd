@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.12.0...v1.12.1) (2025-09-01)
+
+
+### Bug Fixes
+
+* **skeleton:** fix biome issues ([6fd051e](https://github.com/soliantconsulting/create-auth0-cicd/commit/6fd051e56986134a776035f572438b07dfb99b86))
+
 # [1.12.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.11.0...v1.12.0) (2025-09-01)
 
 
