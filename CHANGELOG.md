@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.12.1...v1.12.2) (2025-10-23)
+
+
+### Bug Fixes
+
+* add provenance attestation ([e07908a](https://github.com/soliantconsulting/create-auth0-cicd/commit/e07908ac24cc64773b35a660be7940f040aa504b))
+
 ## [1.12.1](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.12.0...v1.12.1) (2025-09-01)
 
 
