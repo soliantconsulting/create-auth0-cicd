@@ -4,7 +4,7 @@ import Auth0Stack from './auth0-stack.js';
 const app = new App();
 new Auth0Stack(app, "DevelopmentStack", {
     stateKey: "development.state",
-    friendlyTenantName: "{{tenantSettings.friendlyName}}",
+    friendlyTenantName: "{{tenantSettings.friendlyName}} (Development)",
     {%- if spaSettings %}
     {{spaSettings.propPrefix}}BaseUrl: "https://example.com",
     {%- endif %}

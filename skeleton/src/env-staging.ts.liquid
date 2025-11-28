@@ -5,7 +5,7 @@ import { envVariables } from './env-variables.js';
 const app = new App();
 new Auth0Stack(app, "StagingStack", {
     stateKey: "staging.state",
-    friendlyTenantName: "{{tenantSettings.friendlyName}}",
+    friendlyTenantName: "{{tenantSettings.friendlyName}} (Staging)",
     {%- if spaSettings %}
     {{spaSettings.propPrefix}}BaseUrl: "https://example.com",
     {%- endif %}
