@@ -1,3 +1,10 @@
+## [1.12.4](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.12.3...v1.12.4) (2025-11-28)
+
+
+### Bug Fixes
+
+* attach env to friendly tenant name ([34ad282](https://github.com/soliantconsulting/create-auth0-cicd/commit/34ad28252db00a32aa212267c39d47170ef0ce43))
+
 ## [1.12.3](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.12.2...v1.12.3) (2025-11-28)
 
 
