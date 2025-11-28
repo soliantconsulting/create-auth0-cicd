@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.12.5...v1.13.0) (2025-11-28)
+
+
+### Features
+
+* upgrade dependencies ([5d7eda1](https://github.com/soliantconsulting/create-auth0-cicd/commit/5d7eda1030b8bd057d04de30dc7f203976b904cd))
+
 ## [1.12.5](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.12.4...v1.12.5) (2025-11-28)
 
 
