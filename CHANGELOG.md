@@ -1,3 +1,10 @@
+## [1.12.3](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.12.2...v1.12.3) (2025-11-28)
+
+
+### Bug Fixes
+
+* replace node22 tsconfig with node24 ([d5f1b62](https://github.com/soliantconsulting/create-auth0-cicd/commit/d5f1b6239920994f7bd2ba633be84fda8aa0b2af))
+
 ## [1.12.2](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.12.1...v1.12.2) (2025-10-23)
 
 
