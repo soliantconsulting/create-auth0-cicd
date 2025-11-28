@@ -1,3 +1,10 @@
+## [1.12.5](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.12.4...v1.12.5) (2025-11-28)
+
+
+### Bug Fixes
+
+* deploy auth0 stack into specified region ([c39f530](https://github.com/soliantconsulting/create-auth0-cicd/commit/c39f5304059193ff62cabd6f484e4f8e923e94ce))
+
 ## [1.12.4](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.12.3...v1.12.4) (2025-11-28)
 
 

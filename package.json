@@ -1,6 +1,6 @@
 {
   "name": "@soliantconsulting/create-auth0-cicd",
-  "version": "1.12.4",
+  "version": "1.12.5",
   "description": "Create Auth0 CICD",
   "repository": {
     "type": "git",
