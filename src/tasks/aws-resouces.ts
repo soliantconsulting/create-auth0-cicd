@@ -6,7 +6,7 @@ import {
     type ProjectContext,
     requireContext,
 } from "@soliantconsulting/starter-lib";
-import { CfnOutput, RemovalPolicy, Stack } from "aws-cdk-lib";
+import { CfnOutput, RemovalPolicy, Stack, type StackProps } from "aws-cdk-lib";
 import { Effect, PolicyStatement, User } from "aws-cdk-lib/aws-iam";
 import { BlockPublicAccess, Bucket } from "aws-cdk-lib/aws-s3";
 import type { Construct } from "constructs";
@@ -44,7 +44,11 @@ export const awsResourcesTask: ListrTask<
             awsEnvContext.region,
             projectContext.name,
             (app, stackName) => {
-                new Auth0Stack(app, stackName);
+                new Auth0Stack(app, stackName, {
+                    env: {
+                        region: awsEnvContext.region,
+                    },
+                });
             },
             z.object({
                 StateBucketName: z.string().min(1),
@@ -88,8 +92,8 @@ export const awsResourcesTask: ListrTask<
 };
 
 class Auth0Stack extends Stack {
-    public constructor(scope: Construct, id: string) {
-        super(scope, id);
+    public constructor(scope: Construct, id: string, props?: StackProps) {
+        super(scope, id, props);
 
         const stateBucket = new Bucket(this, "StateBucket", {
             autoDeleteObjects: true,
