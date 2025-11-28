@@ -43,12 +43,14 @@ export const bitbucketPipelineTask: ListrTask<
             bitbucketRepositoryContext.repository,
         );
 
-        await bitbucket.createRepositoryVariable(
+        const repositoryVariables = bitbucket.variables();
+
+        await repositoryVariables.replace(
             "SES_ACCESS_KEY_ID",
             awsResourcesContext.accessKeyId,
             false,
         );
-        await bitbucket.createRepositoryVariable(
+        await repositoryVariables.replace(
             "SES_SECRET_ACCESS_KEY",
             awsResourcesContext.secretAccessKey,
             true,
@@ -96,24 +98,11 @@ export const bitbucketPipelineTask: ListrTask<
                 throw new Error(`Could not find pipeline environment ${pipelineEnv}`);
             }
 
-            await bitbucket.createEnvVariable(
-                environment.uuid,
-                "AUTH0_DOMAIN",
-                credentials.tenant,
-                false,
-            );
-            await bitbucket.createEnvVariable(
-                environment.uuid,
-                "AUTH0_CLIENT_ID",
-                credentials.clientId,
-                false,
-            );
-            await bitbucket.createEnvVariable(
-                environment.uuid,
-                "AUTH0_CLIENT_SECRET",
-                credentials.clientSecret,
-                true,
-            );
+            const envVariables = bitbucket.variables(environment.uuid);
+
+            await envVariables.replace("AUTH0_DOMAIN", credentials.tenant, false);
+            await envVariables.replace("AUTH0_CLIENT_ID", credentials.clientId, false);
+            await envVariables.replace("AUTH0_CLIENT_SECRET", credentials.clientSecret, true);
         }
     },
 };
