@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.13.0...v1.13.1) (2026-01-08)
+
+
+### Bug Fixes
+
+* **skeleton:** flip exists check for asset uploads ([18b69ed](https://github.com/soliantconsulting/create-auth0-cicd/commit/18b69ed3dfce4faf92faee2aeb133f363da567fe))
+
 # [1.13.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.12.5...v1.13.0) (2025-11-28)
 
 
