@@ -50,7 +50,7 @@ export const uploadAssets = async (assetsDir: string, bucket: string, baseUrl: s
 
         manifest[relPath] = `${baseUrl}/${key}`;
 
-        if (!exists) {
+        if (exists) {
             console.info(`Skipped (exists): ${relPath} → ${key}`);
             continue;
         }
