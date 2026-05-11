@@ -1,4 +1,5 @@
-onlyBuiltDependencies:
-  - '@biomejs/biome'
-  - "@cdktf/node-pty-prebuilt-multiarch"
-  - lefthook
+sideEffectsCache: false
+allowBuilds:
+  '@biomejs/biome': true
+  '@cdktf/node-pty-prebuilt-multiarch': true
+  lefthook: true

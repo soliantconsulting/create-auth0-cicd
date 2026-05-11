@@ -29,7 +29,7 @@ export type CdktfContext = {
 await runPipeline({
     packageName: "@soliantconsulting/create-auth0-cicd",
     tasks: [
-        createPnpmVersionTask("10.15.0"),
+        createPnpmVersionTask("11.0.0"),
         auth0VersionTask,
         terraformVersionTask,
         createProjectTask(),
