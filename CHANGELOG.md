@@ -1,3 +1,10 @@
+## [1.13.3](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.13.2...v1.13.3) (2026-05-11)
+
+
+### Bug Fixes
+
+* upgrade to pnpm 11 ([db38fdd](https://github.com/soliantconsulting/create-auth0-cicd/commit/db38fddfdf7e75dc1f23d0eba1ca7f04602bbc9e))
+
 ## [1.13.2](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.13.1...v1.13.2) (2026-04-28)
 
 
