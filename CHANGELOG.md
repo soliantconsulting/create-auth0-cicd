@@ -1,3 +1,10 @@
+## [1.13.4](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.13.3...v1.13.4) (2026-05-11)
+
+
+### Bug Fixes
+
+* **ci:** bump workflow actions to v6 ([1893884](https://github.com/soliantconsulting/create-auth0-cicd/commit/189388438a86a9ba09b0aa6c0ab93083f7685328))
+
 ## [1.13.3](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.13.2...v1.13.3) (2026-05-11)
 
 
