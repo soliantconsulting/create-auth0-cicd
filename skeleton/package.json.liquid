@@ -4,9 +4,11 @@
     "private": true,
     "type": "module",
     "devDependencies": {
+        "@auth0/actions": "^0.26.0",
         "@biomejs/biome": "2.4.16",
         "@commitlint/cli": "^21.0.2",
         "@commitlint/config-conventional": "^21.0.2",
+        "@tsconfig/node22": "^22.0.5",
         "@tsconfig/node26": "^26.0.0",
         "@types/node": "^26.1.0",
         "execa": "^9.6.1",
@@ -21,7 +23,8 @@
         "mime": "^4.1.0"
     },
     "scripts": {
-        "build": "tsc",
+        "build": "tsc && tsc --project tsconfig.action.json",
+        "typecheck": "tsc --noEmit && tsc --noEmit --project tsconfig.action.json",
         "format": "biome format . --write",
         "check": "biome check . --write"
     }
