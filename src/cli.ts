@@ -6,6 +6,7 @@ import {
     createBitbucketRepositoryTask,
     createDeployRoleTask,
     createGitTask,
+    createNodeVersionTask,
     createPnpmVersionTask,
     createProjectTask,
     runPipeline,
@@ -30,6 +31,7 @@ await runPipeline({
     packageName: "@soliantconsulting/create-auth0-cicd",
     tasks: [
         createPnpmVersionTask("11.0.0"),
+        createNodeVersionTask("26.0.0"),
         auth0VersionTask,
         terraformVersionTask,
         createProjectTask(),

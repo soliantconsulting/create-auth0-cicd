@@ -23,8 +23,8 @@ export const terraformVersionTask: ListrTask = {
 
         const version = versionMatch[1];
 
-        if (!semver.gte(version, "1.7.4")) {
-            throw new Error(`terraform version ${version} found, need at least 1.7.4`);
+        if (!semver.gte(version, "1.15.5")) {
+            throw new Error(`terraform version ${version} found, need at least 1.15.5`);
         }
     },
 };
