@@ -1,3 +1,18 @@
+# [1.14.0](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.13.4...v1.14.0) (2026-07-06)
+
+
+### Bug Fixes
+
+* **skeleton:** declare codeMakerOutput so cdktn synth works locally ([9564c87](https://github.com/soliantconsulting/create-auth0-cicd/commit/9564c870e2d1aa2bf90ea0bcc7839ae7fd478807))
+
+
+### Features
+
+* **skeleton:** add Auth0 actions plumbing ([356c16f](https://github.com/soliantconsulting/create-auth0-cicd/commit/356c16fefcc1817e0e9e7850d7762e03d3f0f0ae))
+* **skeleton:** replace cdktf with cdktn and update dependencies ([929101d](https://github.com/soliantconsulting/create-auth0-cicd/commit/929101d26cbce58c44563f84e2cd7c630e8341ca))
+* update biome to 2.5 ([cfe039f](https://github.com/soliantconsulting/create-auth0-cicd/commit/cfe039f4fd6911d1b41112911d6c86382ed2ff78))
+* update dependencies and raise runtime requirements ([dd464cb](https://github.com/soliantconsulting/create-auth0-cicd/commit/dd464cb9f201e5a9d14a780f3e5f1f43ff01080a))
+
 ## [1.13.4](https://github.com/soliantconsulting/create-auth0-cicd/compare/v1.13.3...v1.13.4) (2026-05-11)
 
 
