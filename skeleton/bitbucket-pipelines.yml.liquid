@@ -1,4 +1,4 @@
-image: public.ecr.aws/docker/library/node:24
+image: public.ecr.aws/docker/library/node:26
 
 definitions:
   caches:
@@ -33,7 +33,7 @@ definitions:
           - export AWS_WEB_IDENTITY_TOKEN_FILE=$(pwd)/web-identity-token
           - echo $BITBUCKET_STEP_OIDC_TOKEN > $(pwd)/web-identity-token
           # Install terraform
-          - TERRAFORM_VERSION=1.13.1
+          - TERRAFORM_VERSION=1.15.5
           - wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
           - unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip
           - rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
@@ -42,7 +42,7 @@ definitions:
           - corepack enable
           - pnpm install
           # Deploy with CDK
-          - pnpm cdktf deploy --app "node dist/env-$BITBUCKET_DEPLOYMENT_ENVIRONMENT.js" --auto-approve
+          - pnpm cdktn deploy --app "node dist/env-$BITBUCKET_DEPLOYMENT_ENVIRONMENT.js" --auto-approve
 
 pipelines:
   branches:
