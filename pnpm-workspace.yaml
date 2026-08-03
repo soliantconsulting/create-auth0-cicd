@@ -3,3 +3,5 @@ allowBuilds:
   '@biomejs/biome': true
   esbuild: true
   lefthook: true
+minimumReleaseAgeExclude:
+  - '@soliantconsulting/starter-lib@3.0.0'
