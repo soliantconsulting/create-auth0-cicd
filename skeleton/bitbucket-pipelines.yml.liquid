@@ -95,7 +95,6 @@ pipelines:
           <<: *deploy
           name: Deploy Staging
           deployment: staging
-          trigger: manual
       {%- endif %}
       {%- if tenantsBootstrap.auth0Credentials.production %}
       - step:
